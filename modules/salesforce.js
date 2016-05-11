@@ -112,6 +112,49 @@ let createContact = contact => {
 
 };
 
+let createQuote = quote => {
+
+    return new Promise((resolve, reject) => {
+        let c = nforce.createSObject('Proposal');
+        c.set('name', quote.name);
+        c.set('priceList', quote.Apttus_QPConfig__PriceListId__c);
+        c.set('closeDate', quote.Close_Date__c);
+        c.set('status', 'New');
+
+        org.insert({sobject: c}, err => {
+            if (err) {
+                console.error(err);
+                reject("An error occurred while creating the quote");
+            } else {
+                resolve(c);
+            }
+        });
+    });
+
+};
+
+
+let createAgreement = agreement => {
+
+    return new Promise((resolve, reject) => {
+        let c = nforce.createSObject('APTS_Agreement');
+        c.set('name', agreement.name);
+        c.set('startDate', agreement.startDate);
+        c.set('closeDate', agreement.closeDate);
+        c.set('status', 'New');
+
+        org.insert({sobject: c}, err => {
+            if (err) {
+                console.error(err);
+                reject("An error occurred while creating an agreement");
+            } else {
+                resolve(c);
+            }
+        });
+    });
+
+};
+
 let createCase = newCase => {
 
     return new Promise((resolve, reject) => {
@@ -141,4 +184,6 @@ exports.findContact = findContact;
 exports.findOpportunity = findOpportunity;
 exports.getTopOpportunities = getTopOpportunities;
 exports.createContact = createContact;
+exports.createAgreement = createAgreement;
+exports.createQuote = createQuote;
 exports.createCase = createCase;

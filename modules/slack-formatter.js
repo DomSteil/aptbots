@@ -83,8 +83,33 @@ let formatCase = _case => {
 
 };
 
+let formatQuote = _quote => {
+
+    let fields = [];
+    fields.push({title: "Name", value: _quote.get("name"), short: true});
+    fields.push({title: "Pricelist", value: _quote.get("priceList"), short: true});
+    fields.push({title: "Close Date", value: _quote.get("closeDate"), short: false});
+	fields.push({title: "Status", value: _quote.get("status"), short: false});
+    return [{color: color, fields: fields}];
+
+};
+
+let formatAgreement = _agreement => {
+
+    let fields = [];
+    fields.push({title: "Name", value: _agreement.get("name"), short: true});
+    fields.push({title: "Pricelist", value: _agreement.get("startDate"), short: true});
+    fields.push({title: "Close Date", value: _agreement.get("closeDate"), short: false});
+	fields.push({title: "Status", value: _agreement.get("status"), short: false});
+    return [{color: color, fields: fields}];
+
+};
+
+
 exports.formatAccounts = formatAccounts;
 exports.formatContacts = formatContacts;
 exports.formatContact = formatContact;
 exports.formatOpportunities = formatOpportunities;
 exports.formatCase = formatCase;
+exports.formatQuote = formatQuote;
+exports.formatAgreement = formatAgreement;

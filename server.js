@@ -174,3 +174,127 @@ controller.hears(['create contact', 'new contact'], 'direct_message,direct_menti
     bot.startConversation(message, askFirstName);
 
 });
+
+controller.hears(['Create quote', 'new quote'], 'direct_message,direct_mention,mention', (bot, message) => {
+
+    let name,
+        priceList,
+        closeDate,
+        status;
+
+    let askQuoteName = (response, convo) => {
+
+        convo.ask("What's the quote name?", (response, convo) => {
+            name = response.text;
+            askPriceList(response, convo);
+            convo.next();
+        });
+
+    };
+
+    let askPriceList = (response, convo) => {
+
+        convo.ask("Which pricelist?", (response, convo) => {
+            priceList = response.text;
+            askCloseDate(response, convo);
+            convo.next();
+        });
+
+    };
+
+    let askCloseDate = (response, convo) => {
+
+        convo.ask("What's the Close Date?", (response, convo) => {
+            closeDate = response.text;
+            askStatus(response, convo);
+            convo.next();
+        });
+
+    };
+
+    let askStatus = (response, convo) => {
+
+        convo.ask("What's the status?", (response, convo) => {
+            status = response.text;
+            salesforce.createQuote({name: name, priceList: priceList, closeDate: closeDate, status: status})
+                .then(quote => {
+                    bot.reply(message, {
+                        text: "I created the quote:",
+                        attachments: formatter.formatQuote(quote)
+                    });
+                    convo.next();
+                })
+                .catch(error => {
+                    bot.reply(message, error);
+                    convo.next();
+                });
+        });
+
+    };
+
+    bot.reply(message, "OK, I can help you with that!");
+    bot.startConversation(message, askQuoteName);
+
+});
+
+controller.hears(['create agreement', 'new agreement', 'create contract', 'new contract'], 'direct_message,direct_mention,mention', (bot, message) => {
+
+    let name,
+        startDate,
+        closeDate,
+        status;
+
+    let askAgreementName = (response, convo) => {
+
+        convo.ask("What's the contract name?", (response, convo) => {
+            name = response.text;
+            askStartDate(response, convo);
+            convo.next();
+        });
+
+    };
+
+    let askStartDate = (response, convo) => {
+
+        convo.ask("What's the Start Date?", (response, convo) => {
+            startDate = response.text;
+            askCloseDate(response, convo);
+            convo.next();
+        });
+
+    };
+
+    let askCloseDate = (response, convo) => {
+
+        convo.ask("What's the Close Date?", (response, convo) => {
+            closeDate = response.text;
+            askStatus(response, convo);
+            convo.next();
+        });
+
+    };
+
+    let askStatus = (response, convo) => {
+
+        convo.ask("What's the status?", (response, convo) => {
+            status = response.text;
+            salesforce.createAgreement({Name: name, startDate: startDate, closeDate: closeDate, status: status})
+                .then(agreement => {
+                    bot.reply(message, {
+                        text: "I created the agreement:",
+                        attachments: formatter.formatAgreement(agreement)
+                    });
+                    convo.next();
+                })
+                .catch(error => {
+                    bot.reply(message, error);
+                    convo.next();
+                });
+        });
+
+    };
+
+    bot.reply(message, "OK, I can help you with that!");
+    bot.startConversation(message, askAgreementName);
+
+});
