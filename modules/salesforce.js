@@ -115,7 +115,7 @@ let createContact = contact => {
 let createQuote = quote => {
 
     return new Promise((resolve, reject) => {
-        let c = nforce.createSObject('Proposal');
+        let c = nforce.createSObject('Apttus_Proposal__Proposal__c');
         c.set('name', quote.name);
         c.set('priceList', quote.Apttus_QPConfig__PriceListId__c);
         c.set('closeDate', quote.Close_Date__c);
@@ -137,7 +137,7 @@ let createQuote = quote => {
 let createAgreement = agreement => {
 
     return new Promise((resolve, reject) => {
-        let c = nforce.createSObject('APTS_Agreement');
+        let c = nforce.createSObject('Apttus__APTS_Agreement__c');
         c.set('name', agreement.name);
         c.set('startDate', agreement.startDate);
         c.set('closeDate', agreement.closeDate);
@@ -176,6 +176,29 @@ let createCase = newCase => {
 
 };
 
+
+
+/* let createIsr = isr => {
+
+    return new Promise((resolve, reject) => {
+        let c = nforce.createSObject('ISR');
+        c.set('number', isr.number);
+        c.set('startDate', isr.startDate);
+        c.set('closeDate', isr.closeDate);
+        c.set('type', isr.type);
+        c.set('activity', isr.type);
+
+                org.insert({sobject: c}, err => {
+            if (err) {
+                console.error(err);
+                reject("An error occurred while creating a ISR");
+            } else {
+                resolve(c);
+            }
+        });
+    });
+};
+*/
 login();
 
 exports.org = org;

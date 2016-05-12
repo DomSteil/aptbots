@@ -106,6 +106,18 @@ let formatAgreement = _agreement => {
 };
 
 
+let formatIsr = _isr => {
+
+    let fields = [];
+    fields.push({title: "Number", value: _isr.get("number"), short: true});
+    fields.push({title: "Start Date", value: _isr.get("startDate"), short: true});
+    fields.push({title: "Close Date", value: _isr.get("closeDate"), short: false});
+    fields.push({title: "Type", value: _isr.get("type"), short: false});
+    fields.push({title: "Activity", value: _isr.get("activity"), short: false});
+    return [{color: color, fields: fields}];
+
+};
+
 exports.formatAccounts = formatAccounts;
 exports.formatContacts = formatContacts;
 exports.formatContact = formatContact;
@@ -113,3 +125,4 @@ exports.formatOpportunities = formatOpportunities;
 exports.formatCase = formatCase;
 exports.formatQuote = formatQuote;
 exports.formatAgreement = formatAgreement;
+exports.formartIsr = formatIsr;
