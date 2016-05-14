@@ -178,45 +178,33 @@ controller.hears(['create contact', 'new contact'], 'direct_message,direct_menti
 controller.hears(['Create quote', 'new quote'], 'direct_message,direct_mention,mention', (bot, message) => {
 
     let name,
-        priceList,
-        closeDate,
-        status;
+        opportunityName,
+        priceList;
 
     let askQuoteName = (response, convo) => {
 
-        convo.ask("What's the quote name?", (response, convo) => {
+        convo.ask("What's the Quote name?", (response, convo) => {
             name = response.text;
+            askOpportunityName(response, convo);
+            convo.next();
+        });
+
+    };
+
+    let askOpportunityName = (response, convo) => {
+
+        convo.ask("What's the Opportunity name?", (repsonse, convo) => {
+            opportunityName = response.text;
             askPriceList(response, convo);
             convo.next();
         });
-
-    };
+    }
 
     let askPriceList = (response, convo) => {
 
-        convo.ask("Which pricelist?", (response, convo) => {
+        convo.ask("Which Price List?", (response, convo) => {
             priceList = response.text;
-            askCloseDate(response, convo);
-            convo.next();
-        });
-
-    };
-
-    let askCloseDate = (response, convo) => {
-
-        convo.ask("What's the Close Date?", (response, convo) => {
-            closeDate = response.text;
-            askStatus(response, convo);
-            convo.next();
-        });
-
-    };
-
-    let askStatus = (response, convo) => {
-
-        convo.ask("What's the status?", (response, convo) => {
-            status = response.text;
-            salesforce.createQuote({name: name, priceList: priceList, closeDate: closeDate, status: status})
+            salesforce.createQuote({name: name, opportunityName: opportunityName, priceList: priceList})
                 .then(quote => {
                     bot.reply(message, {
                         text: "I created the quote:",
@@ -299,4 +287,79 @@ controller.hears(['create agreement', 'new agreement', 'create contract', 'new c
 
 });
 
+
+
+controller.hears(['create ISR', 'new ISR', 'log ISR', ], 'direct_message,direct_mention,mention', (bot, message) => {
+
+    let isr,
+        start,
+        end,
+        type,
+        activity;
+
+    let askIsrNumber = (response, convo) => {
+
+        convo.ask("What's the ISR number?", (response, convo) => {
+            isr = response.text;
+            askStartDate(response, convo);
+            convo.next();
+        });
+
+    };
+
+    let askStart = (response, convo) => {
+
+        convo.ask("What was the Start time?", (response, convo) => {
+            start = response.text;
+            askCloseDate(response, convo);
+            convo.next();
+        });
+
+    };
+
+    let askClose = (response, convo) => {
+
+        convo.ask("When did you finish?", (response, convo) => {
+            end = response.text;
+            askStatus(response, convo);
+            convo.next();
+        });
+
+    };
+
+     let askType = (response, convo) => {
+
+        convo.ask("What type of event?", (response, convo) => {
+            type = response.text;
+            askActivity(response, convo);
+            convo.next();
+        });
+
+    };
+
+
+    let askActivity = (response, convo) => {
+
+        convo.ask("What's type of activity", (response, convo) => {
+            status = response.text;
+            salesforce.createISR({isr: isr, start: start, end: end, type: type, activity: activity})
+                .then(isr=> {
+                    bot.reply(message, {
+                        text: "I created the ISR:",
+                        attachments: formatter.formatIsr(isr)
+                    });
+                    convo.next();
+                })
+                .catch(error => {
+                    bot.reply(message, error);
+                    convo.next();
+                });
+        });
+
+    };
+
+    bot.reply(message, "OK, I can help you with that!");
+    bot.startConversation(message, askIsrNumber);
+
+});
 

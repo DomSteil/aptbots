@@ -1,6 +1,6 @@
 "use strict";
 
-let color = "#009cdb";
+let color = "#62A70F";
 
 let formatAccounts = accounts => {
 
@@ -46,7 +46,7 @@ let formatContact = contact => {
     let fields = [];
     fields.push({title: "Name", value: contact.get("FirstName") + " " + contact.get("LastName"), short:true});
     fields.push({title: "Link", value: "https://login.salesforce.com/" + contact.getId(), short:true});
-    fields.push({title: "Title", value: contact.get("Title"), short:true});
+    fields.push({title: "Title", value: cont/act.get("Title"), short:true});
     fields.push({title: "Phone", value: contact.get("Phone"), short:true});
     return [{color: color, fields: fields}];
 
@@ -83,24 +83,25 @@ let formatCase = _case => {
 
 };
 
-let formatQuote = _quote => {
+let formatQuote = quote => {
 
     let fields = [];
-    fields.push({title: "Name", value: _quote.get("name"), short: true});
-    fields.push({title: "Pricelist", value: _quote.get("priceList"), short: true});
-    fields.push({title: "Close Date", value: _quote.get("closeDate"), short: false});
-	fields.push({title: "Status", value: _quote.get("status"), short: false});
+    fields.push({title: "Name", value: quote.get("Apttus_Proposal__Proposal_Name__c"), short: true});
+    fields.push({title: "Opportunity", value: "Venture - Hardware and Software", short: true});
+    fields.push({title: "Price List", value: "Tier 1 Hardware & Software", short: true});
+    fields.push({title: "Link", value: '<' +'https://login.salesforce.com/apex/Apttus_QPConfig__ProposalConfiguration?id=' + quote.get("id") + '&amp;useAdvancedApproval=true&amp;useDealOptimizer=true&amp;method=csrFlow'+'|Configure Products'+ '>', short: true});
     return [{color: color, fields: fields}];
 
 };
 
-let formatAgreement = _agreement => {
+let formatAgreement = agreement => {
 
     let fields = [];
-    fields.push({title: "Name", value: _agreement.get("name"), short: true});
-    fields.push({title: "Pricelist", value: _agreement.get("startDate"), short: true});
-    fields.push({title: "Close Date", value: _agreement.get("closeDate"), short: false});
-	fields.push({title: "Status", value: _agreement.get("status"), short: false});
+    fields.push({title: "Name", value: agreement.get("Name"), short: true});
+    fields.push({title: "Start Date", value: agreement.get("Apttus__Contract_Start_Date__c"), short: true});
+    fields.push({title: "Close Date", value: agreement.get("Apttus__Contract_End_Date__c"), short: false});
+	fields.push({title: "Status", value: agreement.get("Apttus__Status__c"), short: false});
+    fields.push({title: "Link", value: 'https://login.salesforce.com/' + agreement.get("id"), short: true});
     return [{color: color, fields: fields}];
 
 };
@@ -110,8 +111,8 @@ let formatIsr = _isr => {
 
     let fields = [];
     fields.push({title: "Number", value: _isr.get("number"), short: true});
-    fields.push({title: "Start Date", value: _isr.get("startDate"), short: true});
-    fields.push({title: "Close Date", value: _isr.get("closeDate"), short: false});
+    fields.push({title: "Start", value: _isr.get("StartDate"), short: true});
+    fields.push({title: "Close", value: _isr.get("CloseDate"), short: false});
     fields.push({title: "Type", value: _isr.get("type"), short: false});
     fields.push({title: "Activity", value: _isr.get("activity"), short: false});
     return [{color: color, fields: fields}];

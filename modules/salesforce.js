@@ -116,10 +116,9 @@ let createQuote = quote => {
 
     return new Promise((resolve, reject) => {
         let c = nforce.createSObject('Apttus_Proposal__Proposal__c');
-        c.set('name', quote.name);
-        c.set('priceList', quote.Apttus_QPConfig__PriceListId__c);
-        c.set('closeDate', quote.Close_Date__c);
-        c.set('status', 'New');
+        c.set('Apttus_Proposal__Proposal_Name__c', quote.name);
+        c.set('Apttus_Proposal__Opportunity__c', '006j0000009vkka');
+        c.set('Apttus_QPConfig__PriceListId__c', 'a0xj0000000pxNF');
 
         org.insert({sobject: c}, err => {
             if (err) {
@@ -138,10 +137,10 @@ let createAgreement = agreement => {
 
     return new Promise((resolve, reject) => {
         let c = nforce.createSObject('Apttus__APTS_Agreement__c');
-        c.set('name', agreement.name);
-        c.set('startDate', agreement.startDate);
-        c.set('closeDate', agreement.closeDate);
-        c.set('status', 'New');
+        c.set('Name', agreement.name);
+        c.set('Apttus__Contract_Start_Date__c', agreement.startDate);
+        c.set('Apttus__Contract_End_Date__c', agreement.closeDate);
+        c.set('Apttus__Status__c', agreement.status);
 
         org.insert({sobject: c}, err => {
             if (err) {
@@ -176,17 +175,15 @@ let createCase = newCase => {
 
 };
 
-
-
-/* let createIsr = isr => {
+ let createIsr = isr => {
 
     return new Promise((resolve, reject) => {
         let c = nforce.createSObject('ISR');
-        c.set('number', isr.number);
-        c.set('startDate', isr.startDate);
-        c.set('closeDate', isr.closeDate);
-        c.set('type', isr.type);
-        c.set('activity', isr.type);
+        c.set('number', isr.isr);
+        c.set('Start__c', isr.start);
+        c.set('End__c', isr.close);
+        c.set('SE_Event_Type__c', isr.type);
+        c.set('SE_Activity_Type__c', isr.activity);
 
                 org.insert({sobject: c}, err => {
             if (err) {
@@ -198,7 +195,7 @@ let createCase = newCase => {
         });
     });
 };
-*/
+
 login();
 
 exports.org = org;
