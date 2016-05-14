@@ -1,6 +1,6 @@
 {
-  "name": "apttusApprove",
-  "description": "Simple message broker to enable Slack to Apttus Approvals using Slash Commands",
+  "name": "aptbot",
+  "description": "alive",
   "env": {
     "SF_CLIENT_ID": {
         "description": "Client Id of your Salesforce Connected App",
