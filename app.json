@@ -1,0 +1,26 @@
+{
+  "name": "apttusApprove",
+  "description": "Simple message broker to enable Slack to Apttus Approvals using Slash Commands",
+  "env": {
+    "CLIENT_ID": {
+        "description": "Client Id of your Salesforce Connected App",
+        "value":""
+    },
+    "CLIENT_SECRET": {
+        "description": "Secret of your Salesforce Connected App",
+        "value":""
+    },
+    "USER_NAME": {
+        "description": "Salesforce username for your integration user",
+        "value":""
+    },
+    "PASSWORD": {
+        "description": "Salesforce password for your integration user",
+        "value":""
+    },
+    "SLACK_BOT_TOKEN": {
+        "description": "Slack token for the case slash command",
+        "value":"xoxb-38663339269-j588XUYOZ9XJsNX6iVanQ2GW"
+    }
+  }
+}
