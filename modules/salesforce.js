@@ -179,7 +179,7 @@ let createCase = newCase => {
 
     return new Promise((resolve, reject) => {
         let c = nforce.createSObject('ISR');
-        c.set('number', isr.isr);
+        c.set('Related_To__c', isr.isr);
         c.set('Start__c', isr.start);
         c.set('End__c', isr.close);
         c.set('SE_Event_Type__c', isr.type);
@@ -207,3 +207,4 @@ exports.createContact = createContact;
 exports.createAgreement = createAgreement;
 exports.createQuote = createQuote;
 exports.createCase = createCase;
+exports.createIsr = createIsr;

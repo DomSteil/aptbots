@@ -110,11 +110,11 @@ let formatAgreement = agreement => {
 let formatIsr = _isr => {
 
     let fields = [];
-    fields.push({title: "Number", value: _isr.get("number"), short: true});
-    fields.push({title: "Start", value: _isr.get("StartDate"), short: true});
-    fields.push({title: "Close", value: _isr.get("CloseDate"), short: false});
-    fields.push({title: "Type", value: _isr.get("type"), short: false});
-    fields.push({title: "Activity", value: _isr.get("activity"), short: false});
+    fields.push({title: "ISR Number", value: _isr.get("Related_To__c"), short: true});
+    fields.push({title: "Start", value: _isr.get("Start__c"), short: true});
+    fields.push({title: "Close", value: _isr.get("End__c"), short: false});
+    fields.push({title: "Type", value: _isr.get("SE_Event_Type__c"), short: false});
+    fields.push({title: "Activity", value: _isr.get("SE_Activity_Type__c"), short: false});
     return [{color: color, fields: fields}];
 
 };

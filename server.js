@@ -301,7 +301,7 @@ controller.hears(['create ISR', 'new ISR', 'log ISR', ], 'direct_message,direct_
 
         convo.ask("What's the ISR number?", (response, convo) => {
             isr = response.text;
-            askStartDate(response, convo);
+            askStart(response, convo);
             convo.next();
         });
 
@@ -311,7 +311,7 @@ controller.hears(['create ISR', 'new ISR', 'log ISR', ], 'direct_message,direct_
 
         convo.ask("What was the Start time?", (response, convo) => {
             start = response.text;
-            askCloseDate(response, convo);
+            askClose(response, convo);
             convo.next();
         });
 
@@ -321,7 +321,7 @@ controller.hears(['create ISR', 'new ISR', 'log ISR', ], 'direct_message,direct_
 
         convo.ask("When did you finish?", (response, convo) => {
             end = response.text;
-            askStatus(response, convo);
+            askType(response, convo);
             convo.next();
         });
 
@@ -340,10 +340,10 @@ controller.hears(['create ISR', 'new ISR', 'log ISR', ], 'direct_message,direct_
 
     let askActivity = (response, convo) => {
 
-        convo.ask("What's type of activity", (response, convo) => {
-            status = response.text;
-            salesforce.createISR({isr: isr, start: start, end: end, type: type, activity: activity})
-                .then(isr=> {
+        convo.ask("What type of activity?", (response, convo) => {
+            activity = response.text;
+            salesforce.createIsr({isr: isr, start: start, end: end, type: type, activity: activity})
+                .then(_isr=> {
                     bot.reply(message, {
                         text: "I created the ISR:",
                         attachments: formatter.formatIsr(isr)
