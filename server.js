@@ -225,7 +225,7 @@ controller.hears(['Create quote', 'new quote', 'Quote', 'New proposal', 'Create 
 
 });
 
-controller.hears(['create agreement', 'new agreement', 'create contract', 'new contract'], 'direct_message,direct_mention,mention', (bot, message) => {
+controller.hears(['create agreement', 'new agreement', 'create contract', 'new contract', 'agreement'], 'direct_message,direct_mention,mention', (bot, message) => {
 
     let name,
         startDate,
