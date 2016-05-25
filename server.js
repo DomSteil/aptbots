@@ -175,7 +175,7 @@ controller.hears(['create contact', 'new contact'], 'direct_message,direct_menti
 
 });
 
-controller.hears(['Create quote', 'new quote', 'Quote'], 'direct_message,direct_mention,mention', (bot, message) => {
+controller.hears(['Create quote', 'new quote', 'Quote', 'New proposal', 'Create proposal'], 'direct_message,direct_mention,mention', (bot, message) => {
 
     let name,
         opportunityName,
