@@ -117,8 +117,8 @@ let createQuote = quote => {
     return new Promise((resolve, reject) => {
         let c = nforce.createSObject('Apttus_Proposal__Proposal__c');
         c.set('Apttus_Proposal__Proposal_Name__c', quote.name);
-        c.set('Apttus_Proposal__Opportunity__c', '00636000007G0BJ');
-        c.set('Apttus_QPConfig__PriceListId__c', 'a1f36000000dL7X');
+        c.set('Apttus_Proposal__Opportunity__c', '006j0000009vkka');
+        c.set('Apttus_QPConfig__PriceListId__c', 'a0xj0000000pxNF');
 
         org.insert({sobject: c}, err => {
             if (err) {
@@ -188,7 +188,7 @@ let createCase = newCase => {
                 org.insert({sobject: c}, err => {
             if (err) {
                 console.error(err);
-                reject("An error occurred while creating a ISR");
+                reject("An error occurred while creating the ISR");
             } else {
                 resolve(c);
             }
