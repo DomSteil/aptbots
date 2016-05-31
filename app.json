@@ -20,7 +20,7 @@
     },
     "SLACK_BOT_TOKEN": {
         "description": "Slack token for the case slash command",
-        "value":"xoxb-38663339269-j588XUYOZ9XJsNX6iVanQ2GW"
+        "value":"xoxb-38663339269-AMvHA9RWkt9BUQEzTeyrGzXL"
     }
   }
 }
