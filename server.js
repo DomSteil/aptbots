@@ -21,7 +21,7 @@ bot.startRTM(err => {
 
 controller.hears(['help'], 'direct_message,direct_mention,mention', (bot, message) => {
     bot.reply(message, {
-        text: `Hello there, my Name is Aptbot. You can ask me do Salesforce and Apttus things like:
+        text: `Hello there, my name is Aptbot. You can ask me to do Salesforce and Apttus things like:
     "Search account Acme" or "Search Acme in acccounts"
     "Search contact Lisa Smith" or "Search Lisa Smith in contacts"
     "Search opportunity Big Deal"
