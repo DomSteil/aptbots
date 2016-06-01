@@ -176,7 +176,7 @@ let createCase = newCase => {
 
 };
 
- let createIsr = isr => {
+ let createISR = isr => {
 
     return new Promise((resolve, reject) => {
         let c = nforce.createSObject('ISR');
@@ -197,6 +197,25 @@ let createCase = newCase => {
     });
 };
 
+ let createNDA = nda => {
+
+    return new Promise((resolve, reject) => {
+        let c = nforce.createSObject('Apttus__APTS_Agreement__c');
+        c.set('Apttus__Account__c', '0013600000Koh0L');
+        c.set('Apttus__Primary_Contact__c', '0033600000G2P95');
+
+                org.insert({sobject: c}, err => {
+            if (err) {
+                console.error(err);
+                reject("An error occurred while creating the NDA");
+            } else {
+                resolve(c);
+            }
+        });
+    });
+};
+
+
 login();
 
 exports.org = org;
@@ -208,4 +227,5 @@ exports.createContact = createContact;
 exports.createAgreement = createAgreement;
 exports.createQuote = createQuote;
 exports.createCase = createCase;
-exports.createIsr = createIsr;
+exports.createISR = createISR;
+exports.createNDA = createNDA;

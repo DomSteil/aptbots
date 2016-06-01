@@ -108,7 +108,7 @@ let formatAgreement = agreement => {
 };
 
 
-let formatIsr = _isr => {
+let formatISR = _isr => {
 
     let fields = [];
     fields.push({title: "ISR Number", value: _isr.get("Related_To__c"), short: true});
@@ -120,6 +120,14 @@ let formatIsr = _isr => {
 
 };
 
+let formatNDA = nda => {
+
+    let fields = [];
+    fields.push({title: "Account", value: nda.get("Apttus__Account__c"), short: true});
+    fields.push({title: "Contact", value: nda.get("Apttus__Primary_Contact__c"), short: true});
+    return [{color: color, fields: fields}];
+};
+
 exports.formatAccounts = formatAccounts;
 exports.formatContacts = formatContacts;
 exports.formatContact = formatContact;
@@ -127,4 +135,5 @@ exports.formatOpportunities = formatOpportunities;
 exports.formatCase = formatCase;
 exports.formatQuote = formatQuote;
 exports.formatAgreement = formatAgreement;
-exports.formartIsr = formatIsr;
+exports.formartISR = formatISR;
+exports.formatNDA = formatNDA;
