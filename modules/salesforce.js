@@ -100,6 +100,7 @@ let createContact = contact => {
         c.set('lastName', contact.lastName);
         c.set('title', contact.title);
         c.set('phone', contact.phone);
+        c.set('email', contact.email);
         org.insert({sobject: c}, (err, resp) => {
             if (err) {
                 console.error(err);

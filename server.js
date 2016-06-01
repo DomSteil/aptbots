@@ -121,7 +121,8 @@ controller.hears(['create contact', 'new contact'], 'direct_message,direct_menti
     let firstName,
         lastName,
         title,
-        phone;
+        phone,
+        email;
 
     let askFirstName = (response, convo) => {
 
@@ -157,7 +158,16 @@ controller.hears(['create contact', 'new contact'], 'direct_message,direct_menti
 
         convo.ask("What's the phone number?", (response, convo) => {
             phone = response.text;
-            salesforce.createContact({firstName: firstName, lastName: lastName, title: title, phone: phone})
+            convo.next();
+        });
+
+    };
+
+    let askEmail = (response, convo) => {
+
+        convo.ask("What's the email", (repsonse, convo) => {
+            email = response.text;
+            salesforce.createContact({firstName: firstName, lastName: lastName, title: title, phone: phone, email: email})
                 .then(contact => {
                     bot.reply(message, {
                         text: "I created the contact:",
@@ -290,6 +300,45 @@ controller.hears(['create agreement', 'new agreement', 'create contract', 'new c
 
 });
 
+controller.hears(['New NDA', 'Create NDA', 'NDA'], 'direct_message,direct_mention,mention', (bot, message) => {
+
+    let account,
+        contact,
+
+    let askAgreementAccount = (response, convo) => {
+
+        convo.ask("Which Account?", (response, convo) => {
+            account = response.text;
+            askContact(response, convo);
+            convo.next();
+        });
+
+    };
+
+    let askContact = (response, convo) => {
+
+        convo.ask("Who should I send it to?", (response, convo) => {
+            contact = response.text;
+            salesforce.createNDA({Account: account, contact: contact})
+                .then(nda => {
+                    bot.reply(message, {
+                        text: "I created the NDA and send it to contact:",
+                        attachments: formatter.formatAgreement(agreement)
+                    });
+                    convo.next();
+                })
+                .catch(error => {
+                    bot.reply(message, error);
+                    convo.next();
+                });
+        });
+
+    };
+
+    bot.reply(message, "OK, I can help you with that!");
+    bot.startConversation(message, askAgreementAccount);
+
+});
 
 
 controller.hears(['create ISR', 'new ISR', 'log ISR', ], 'direct_message,direct_mention,mention', (bot, message) => {

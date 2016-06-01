@@ -48,6 +48,7 @@ let formatContact = contact => {
     fields.push({title: "Link", value: "https://login.salesforce.com/" + contact.getId(), short:true});
     fields.push({title: "Title", value: cont/act.get("Title"), short:true});
     fields.push({title: "Phone", value: contact.get("Phone"), short:true});
+    fields.push({title: "Email", value: contact.get("Email"), short:true});
     return [{color: color, fields: fields}];
 
 };
