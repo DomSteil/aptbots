@@ -322,7 +322,7 @@ controller.hears(['New NDA', 'Create NDA', 'NDA'], 'direct_message,direct_mentio
             salesforce.createNDA({Account: account, contact: contact})
                 .then(nda => {
                     bot.reply(message, {
-                        text: "I created the NDA and send it to contact:",
+                        text: "I created the NDA and sent it to contact:",
                         attachments: formatter.formatNDA(nda)
                     });
                     convo.next();
