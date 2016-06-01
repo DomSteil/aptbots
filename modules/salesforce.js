@@ -204,7 +204,7 @@ let createCase = newCase => {
         c.set('Apttus__Account__c', '0013600000Koh0L');
         c.set('Apttus__Primary_Contact__c', '0033600000G2P95');
         c.set('What_is_being_disclosed__c', nda.disclosed);
-        c.set('Record Type', '01236000000qoSX');
+      //  c.set('Record Type', '01I36000001ofyR');
 
                 org.insert({sobject: c}, err => {
             if (err) {
