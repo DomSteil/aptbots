@@ -303,7 +303,7 @@ controller.hears(['create agreement', 'new agreement', 'create contract', 'new c
 controller.hears(['New NDA', 'Create NDA', 'NDA'], 'direct_message,direct_mention,mention', (bot, message) => {
 
     let account,
-        contact;
+        contact,
         disclosed;
 
     let askAgreementAccount = (response, convo) => {
