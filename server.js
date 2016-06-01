@@ -341,7 +341,6 @@ controller.hears(['New NDA', 'Create NDA', 'NDA'], 'direct_message,direct_mentio
                     bot.reply(message, error);
                     convo.next();
                 });
-        }
         });
 
     };
