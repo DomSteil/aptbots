@@ -328,7 +328,7 @@ controller.hears(['New NDA', 'Create NDA', 'NDA'], 'direct_message,direct_mentio
     let askDisclose = (respone, convo) => {
 
         convo.ask("What is being disclosed?", (response, convo) => {
-            disclose = response.text;
+            disclosed = response.text;
             salesforce.createNDA({Account: account, contact: contact})
                 .then(nda => {
                     bot.reply(message, {
