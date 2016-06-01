@@ -21,12 +21,16 @@ bot.startRTM(err => {
 
 controller.hears(['help'], 'direct_message,direct_mention,mention', (bot, message) => {
     bot.reply(message, {
-        text: `You can ask me things like:
+        text: `You can ask me Salesforce things like:
     "Search account Acme" or "Search Acme in acccounts"
     "Search contact Lisa Smith" or "Search Lisa Smith in contacts"
     "Search opportunity Big Deal"
     "Create contact"
-    "Create case"`
+    "Create case"
+    And you can ask me Apttus Commands like:
+    "Create Quote"
+    "Create Agreement"
+    "Log ISR"`
     });
 });
 
