@@ -125,7 +125,9 @@ let formatNDA = nda => {
     let fields = [];
     fields.push({title: "Account", value: nda.get("Apttus__Account__c"), short: true});
     fields.push({title: "Contact", value: nda.get("Apttus__Primary_Contact__c"), short: true});
+    fields.push({title: "Disclosed", value: nda.get("What_is_being_disclosed__c",) short: true});
     return [{color: color, fields: fields}];
+    
 };
 
 exports.formatAccounts = formatAccounts;

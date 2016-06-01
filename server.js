@@ -304,6 +304,7 @@ controller.hears(['New NDA', 'Create NDA', 'NDA'], 'direct_message,direct_mentio
 
     let account,
         contact;
+        disclosed;
 
     let askAgreementAccount = (response, convo) => {
 
@@ -319,6 +320,15 @@ controller.hears(['New NDA', 'Create NDA', 'NDA'], 'direct_message,direct_mentio
 
         convo.ask("Who should I send it to?", (response, convo) => {
             contact = response.text;
+            askDisclose(response, convo);
+            convo.next();
+        });
+    };
+
+    let askDisclose = (respone, convo) => {
+
+        convo.ask("What is being disclosed?", (response, convo) => {
+            disclose = response.text;
             salesforce.createNDA({Account: account, contact: contact})
                 .then(nda => {
                     bot.reply(message, {
@@ -331,6 +341,7 @@ controller.hears(['New NDA', 'Create NDA', 'NDA'], 'direct_message,direct_mentio
                     bot.reply(message, error);
                     convo.next();
                 });
+        }
         });
 
     };

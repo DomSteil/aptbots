@@ -203,6 +203,7 @@ let createCase = newCase => {
         let c = nforce.createSObject('Apttus__APTS_Agreement__c');
         c.set('Apttus__Account__c', '0013600000Koh0L');
         c.set('Apttus__Primary_Contact__c', '0033600000G2P95');
+        c.set('What_is_being_disclosed__c' nda.disclose);
 
                 org.insert({sobject: c}, err => {
             if (err) {
