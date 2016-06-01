@@ -325,7 +325,7 @@ controller.hears(['New NDA', 'Create NDA', 'NDA'], 'direct_message,direct_mentio
         });
     };
 
-    let askDisclose = (respone, convo) => {
+    let askDisclose = (response, convo) => {
 
         convo.ask("What is being disclosed?", (response, convo) => {
             disclosed = response.text;
