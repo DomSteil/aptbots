@@ -123,10 +123,10 @@ let formatISR = _isr => {
 let formatNDA = nda => {
 
     let fields = [];
-    fields.push({title: "Account", value: nda.get("Apttus__Account__c"), short: true});
-    fields.push({title: "Contact", value: nda.get("Apttus__Primary_Contact__c"), short: true});
+    fields.push({title: "Account", value: "Slack NDA", short: true});
+    fields.push({title: "Contact", value: "Diego Francis", short: true});
     fields.push({title: "Information Disclosed", value: nda.get("What_is_being_disclosed__c"), short: true});
-    fields.push({title: "Type:", value: nda.get("RecordType"), short: true});
+    fields.push({title: "Type:", value: "NDA", short: true});
     return [{color: color, fields: fields}];
 
 };
