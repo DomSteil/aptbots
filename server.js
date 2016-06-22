@@ -495,7 +495,7 @@ controller.hears(['create ISR', 'new ISR', 'log ISR', ], 'direct_message,direct_
 
 
 
-controller.hears(['show me the buttons', 'buttons', ], 'direct_message', function(bot, message) {
+controller.hears('interactive', 'direct_message', function(bot, message) {
 
     bot.reply(message, {
         attachments:[
