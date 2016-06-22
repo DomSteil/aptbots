@@ -219,24 +219,9 @@ controller.hears(['Create quote', 'new quote', 'Quote', 'New proposal', 'Create 
             priceList = response.text;
             salesforce.createQuote({name: name, opportunityName: opportunityName, priceList: priceList})
                 .then(quote => {
-                    var attachments = formatter.formatQuote(quote);
-                    attachments.fields = attachments.fields.concat({
-                                                title: 'Do you want to Configure Products?',
-                                                callback_id: '123',
-                                                attachment_type: 'default',
-                                                actions: [
-                                                    {
-                                                        "name":"Configure Products",
-                                                        "text": "Configure Products",
-                                                        "value": "Configure Products",
-                                                        "style": "Primary",
-                                                        "type": "button",
-                                                    },
-                                                ]
-                                            });
                     bot.reply(message, {
                         text: "I created the quote:",
-                        attachments: [attachments]
+                        attachments: formatter.formatQuote(quote)
                     });
                     convo.next();
                 })
