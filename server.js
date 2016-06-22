@@ -334,6 +334,7 @@ controller.hears(['New NDA', 'Create NDA', 'NDA'], 'direct_message,direct_mentio
                     bot.reply(message, {
                         text: "I created the NDA and sent it to contact:",
                         attachments: formatter.formatNDA(nda)
+
                     });
                     convo.next();
                 })
@@ -425,3 +426,31 @@ controller.hears(['create ISR', 'new ISR', 'log ISR', ], 'direct_message,direct_
 
 });
 
+
+
+controller.hears('[show me the buttons', 'buttons', ], 'direct_message', function(bot, message) {
+
+    bot.reply(message, {
+        attachments:[
+            {
+                title: 'Do you want to interact with my buttons?',
+                callback_id: '123',
+                attachment_type: 'default',
+                actions: [
+                    {
+                        "name":"yes",
+                        "text": "Yes",
+                        "value": "yes",
+                        "type": "button",
+                    },
+                    {
+                        "name":"no",
+                        "text": "No",
+                        "value": "no",
+                        "type": "button",
+                    }
+                ]
+            }
+        ]
+    });    
+});
