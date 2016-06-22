@@ -221,7 +221,23 @@ controller.hears(['Create quote', 'new quote', 'Quote', 'New proposal', 'Create 
                 .then(quote => {
                     bot.reply(message, {
                         text: "I created the quote:",
-                        attachments:formatter.formatQuote(quote)
+                    attachments: [ formatter.formatQuote(quote),
+            {
+                title: 'Do you want to Congifure Products>',
+                callback_id: '123',
+                attachment_type: 'default',
+                actions: [
+                    {
+                        "name":"Configure Products",
+                        "text": "Configure Products",
+                        "value": "Configure Products",
+                        "style": "Primary",
+                        "type": "button",
+                    },
+                ]
+            }
+        ]
+
                     });
                     convo.next();
                 })
