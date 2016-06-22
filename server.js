@@ -501,6 +501,7 @@ controller.hears('interactive', 'direct_message', function(bot, message) {
         attachments:[
             {
             "title": "The Apttus Slackbot",
+            "color": "#62A70F",
             "fields": [
                 {
                     "title": "Name",
@@ -520,7 +521,7 @@ controller.hears('interactive', 'direct_message', function(bot, message) {
 
 
             {
-                title: 'Do you want to know about Apttus Aptbots?',
+                title: 'Do you want to learn more about Apttus Aptbots?',
                 callback_id: '123',
                 "color": "#62A70F",
                 attachment_type: 'default',
