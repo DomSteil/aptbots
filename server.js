@@ -6,7 +6,7 @@ let Botkit = require('botkit'),
     formatter = require('./modules/slack-formatter'),
     salesforce = require('./modules/salesforce'),
 
-    controller = Botkit.slackbot(),
+    controller = Botkit.slackbot({interactive_replies: true}),
 
     bot = controller.spawn({
         token: SLACK_BOT_TOKEN
