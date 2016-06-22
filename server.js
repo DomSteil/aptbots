@@ -508,12 +508,14 @@ controller.hears('interactive', 'direct_message', function(bot, message) {
                         "name":"yes",
                         "text": "Yes",
                         "value": "yes",
+                        "style": "primary",
                         "type": "button",
                     },
                     {
                         "name":"no",
                         "text": "No",
                         "value": "no",
+                        "style": "danger",
                         "type": "button",
                     }
                 ]
