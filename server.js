@@ -243,6 +243,7 @@ controller.hears(['create agreement', 'new agreement', 'create contract', 'new c
     let name,
         startDate,
         closeDate,
+        type,
         status;
 
     let askAgreementName = (response, convo) => {
@@ -309,7 +310,7 @@ controller.hears(['create agreement', 'new agreement', 'create contract', 'new c
         {
             pattern: "nda",
             callback: function(reply, convo) {
-                convo.say('ok!');
+                type = response.text;
                 askStatus(response, convo);
                 convo.next();
                 // do something awesome here.
@@ -318,7 +319,7 @@ controller.hears(['create agreement', 'new agreement', 'create contract', 'new c
         {
             pattern: "msa",
             callback: function(reply, convo) {
-                convo.say('ok!');
+                type = response.text;
                 askStatus(response, convo);
                 convo.next();
             }
@@ -326,7 +327,7 @@ controller.hears(['create agreement', 'new agreement', 'create contract', 'new c
         {
             pattern: "sow",
             callback: function(reply, convo) {
-                convo.say('ok!');
+                type = response.text;
                 askStatus(response, convo);
                 convo.next();
             }
