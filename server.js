@@ -500,6 +500,26 @@ controller.hears('interactive', 'direct_message', function(bot, message) {
     bot.reply(message, {
         attachments:[
             {
+            "title": "The Apttus Slackbot",
+            "fields": [
+                {
+                    "title": "Name",
+                    "value": "Aptbot",
+                    "short": true
+                },
+                {
+                    "title": "Version",
+                    "value": "1.1",
+            "short": true
+                }
+            ],
+            "author_name": "Dom Steil",
+            "author_icon": "https://api.slack.com/img/api/homepage_custom_integrations-2x.png",
+            "image_url": "https://pbs.twimg.com/profile_images/725549910569807873/E4X7rxHt.jpg"
+        },
+
+
+            {
                 title: 'Do you want to know about Apttus Aptbots?',
                 callback_id: '123',
                 "color": "#62A70F",
