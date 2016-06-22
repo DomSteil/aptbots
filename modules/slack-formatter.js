@@ -101,6 +101,7 @@ let formatAgreement = agreement => {
     fields.push({title: "Name", value: agreement.get("Name"), short: true});
     fields.push({title: "Start Date", value: agreement.get("Apttus__Contract_Start_Date__c"), short: true});
     fields.push({title: "Close Date", value: agreement.get("Apttus__Contract_End_Date__c"), short: false});
+    fields.push({title: "Type", value: agreement.get("RecordType"), short: false});
 	fields.push({title: "Status", value: agreement.get("Apttus__Status__c"), short: false});
     fields.push({title: "Link", value: 'https://login.salesforce.com/' + agreement.get("id"), short: true});
     return [{color: color, fields: fields}];

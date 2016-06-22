@@ -269,11 +269,77 @@ controller.hears(['create agreement', 'new agreement', 'create contract', 'new c
 
         convo.ask("What's the Close Date?", (response, convo) => {
             closeDate = response.text;
-            askStatus(response, convo);
+            askType(response, convo);
             convo.next();
         });
 
     };
+
+    let askType = (response, convo) => {
+
+        convo.ask({
+        attachments:[
+            {
+                title: 'What type of Contract?',
+                callback_id: '123',
+                attachment_type: 'default',
+                actions: [
+                    {
+                        "name":"NDA",
+                        "text": "NDA",
+                        "value": "nda",
+                        "type": "button",
+                    },
+                    {
+                        "name":"MSA",
+                        "text": "MSA",
+                        "value": "msa",
+                        "type": "button",
+                    },
+                     {
+                        "name":"SOW",
+                        "text": "SOW",
+                        "value": "sow",
+                        "type": "button",
+                    },
+                ]
+            }
+        ]
+    },[
+        {
+            pattern: "nda",
+            callback: function(reply, convo) {
+                convo.say('ok!');
+                askStatus(response, convo);
+                convo.next();
+                // do something awesome here.
+            }
+        },
+        {
+            pattern: "msa",
+            callback: function(reply, convo) {
+                convo.say('ok!');
+                askStatus(response, convo);
+                convo.next();
+            }
+        },
+        {
+            pattern: "sow",
+            callback: function(reply, convo) {
+                convo.say('ok!');
+                askStatus(response, convo);
+                convo.next();
+            }
+        },
+        {   
+            default: true,
+            callback: function(reply, convo) {
+                // do nothing
+            }
+        }
+    ]);
+
+    }
 
     let askStatus = (response, convo) => {
 
