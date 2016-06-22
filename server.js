@@ -500,8 +500,9 @@ controller.hears('interactive', 'direct_message', function(bot, message) {
     bot.reply(message, {
         attachments:[
             {
-                title: 'Do you want to interact with my buttons?',
+                title: 'Do you want to know about Apttus Aptbots?',
                 callback_id: '123',
+                "color": "#62A70F",
                 attachment_type: 'default',
                 actions: [
                     {
