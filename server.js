@@ -221,10 +221,9 @@ controller.hears(['Create quote', 'new quote', 'Quote', 'New proposal', 'Create 
                 .then(quote => {
                     bot.reply(message, {
                         text: "I created the quote:",
-                        attachments: [
-                        {formatter.formatQuote(quote)},
-
-                        {
+                        attachments:formatter.formatQuote(quote),
+                        attachments:[
+            {
                 title: 'Do you want to interact with my buttons?',
                 callback_id: '123',
                 attachment_type: 'default',
