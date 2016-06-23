@@ -655,6 +655,12 @@ controller.hears('Blade Servers', 'direct_message', function(bot, message) {
                         "text": "Configure",
                         "value": "Configure",
                         "type": "button",
+                    },
+                    {
+                        "name":"Compare",
+                        "text": "Compare",
+                        "value": "Compare",
+                        "type": "button",
                     }
                 ]
             },
@@ -697,6 +703,12 @@ controller.hears('Blade Servers', 'direct_message', function(bot, message) {
                         "text": "Configure",
                         "value": "Configure",
                         "type": "button",
+                    },
+                    {
+                        "name":"Compare",
+                        "text": "Compare",
+                        "value": "Compare",
+                        "type": "button",
                     }
                 ]
             },
@@ -738,6 +750,12 @@ controller.hears('Blade Servers', 'direct_message', function(bot, message) {
                         "name":"Configure",
                         "text": "Configure",
                         "value": "Configure",
+                        "type": "button",
+                    },
+                    {
+                        "name":"Compare",
+                        "text": "Compare",
+                        "value": "Compare",
                         "type": "button",
                     }
                 ]
