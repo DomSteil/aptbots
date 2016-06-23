@@ -658,7 +658,7 @@ controller.hears('compare', 'direct_message', function(bot, message) {
                         "type": "button",
                     }
                 ]
-            }
+            },
              {
             "title": "",
             "color": "#62A70F",
@@ -701,7 +701,7 @@ controller.hears('compare', 'direct_message', function(bot, message) {
                         "type": "button",
                     }
                 ]
-            }
+            },
              {
             "title": "",
             "color": "#62A70F",
