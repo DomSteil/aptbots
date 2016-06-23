@@ -638,7 +638,7 @@ controller.hears('Blade Servers', 'direct_message', function(bot, message) {
 
 
             {
-                title: 'Do you want to Buy this product?',
+                title: '',
                 callback_id: '123',
                 "color": "#62A70F",
                 attachment_type: 'default',
@@ -680,7 +680,7 @@ controller.hears('Blade Servers', 'direct_message', function(bot, message) {
 
 
             {
-                title: 'Do you want to Buy this product?',
+                title: '',
                 callback_id: '123',
                 "color": "#62A70F",
                 attachment_type: 'default',
@@ -722,7 +722,7 @@ controller.hears('Blade Servers', 'direct_message', function(bot, message) {
 
 
             {
-                title: 'Do you want to Buy this product?',
+                title: '',
                 callback_id: '123',
                 "color": "#62A70F",
                 attachment_type: 'default',
