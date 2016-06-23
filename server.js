@@ -573,7 +573,8 @@ controller.hears('product sheet', 'direct_message', function(bot, message) {
                 },
                 {
                     "title": "Extended Price",
-                    "value": "$4,211.00"
+                    "value": "$4,211.00",
+                    "short": true
                 }
             ],
             "author_name": "WS460c Gen8 Graphics Server Blade",
