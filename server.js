@@ -495,7 +495,7 @@ controller.hears(['create ISR', 'new ISR', 'log ISR', ], 'direct_message,direct_
 
 
 
-controller.hears('interactive', 'direct_message', function(bot, message) {
+controller.hears('interactive', 'direct_message,direct_mention,mention', function(bot, message) {
 
     bot.reply(message, {
         attachments:[
@@ -549,7 +549,7 @@ controller.hears('interactive', 'direct_message', function(bot, message) {
 
 
 
-controller.hears('Approval Requests', 'direct_message', function(bot, message) {
+controller.hears('Approval Requests', 'direct_message,direct_mention,mention', function(bot, message) {
 
     bot.reply(message, {
         attachments:[
@@ -613,7 +613,7 @@ controller.hears('Approval Requests', 'direct_message', function(bot, message) {
 
 
 
-controller.hears('Blade Servers', function(bot, message) {
+controller.hears('Blade Servers', 'direct_message,direct_mention,mention', function(bot, message) {
 
     bot.reply(message, {
         attachments:[
@@ -768,7 +768,7 @@ controller.hears('Blade Servers', function(bot, message) {
 
 
 
-controller.hears('Tier 1 Software', 'direct_message', function(bot, message) {
+controller.hears('Tier 1 Software', 'direct_message,direct_mention,mention', function(bot, message) {
 
     bot.reply(message, {
         attachments:[
@@ -925,7 +925,7 @@ controller.hears('Tier 1 Software', 'direct_message', function(bot, message) {
 
 
 
-controller.hears('Cloud Server Solution', 'direct_message', function(bot, message) {
+controller.hears('Cloud Server Solution', 'direct_message,direct_mention,mention', function(bot, message) {
 
     bot.reply(message, {
         attachments:[
@@ -1050,7 +1050,7 @@ controller.hears('Assets', 'direct_message', function(bot, message) {
 
 
 
-controller.hears('Venture Industries', 'direct_message', function(bot, message) {
+controller.hears('Venture Industries', 'direct_message,direct_mention,mention', function(bot, message) {
 
     bot.reply(message, {
         attachments:[
