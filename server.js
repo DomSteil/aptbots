@@ -763,3 +763,208 @@ controller.hears('Blade Servers', 'direct_message', function(bot, message) {
         ]
     });    
 });
+
+
+
+
+controller.hears('Tier 1 Software', 'direct_message', function(bot, message) {
+
+    bot.reply(message, {
+        attachments:[
+            {
+            "title": "",
+            "color": "#62A70F",
+            "fields": [
+                {
+                    "title": "Product Code",
+                    "value": "SW-SLCRM003",
+                    "short": true
+                },
+                {
+                    "title": "List Price",
+                    "value": "$125.00",
+                    "short": true
+                },
+            ],
+            "author_name": "Sales Enterprise",
+            "author_icon": "https://api.slack.com/img/api/homepage_custom_integrations-2x.png",
+            "image_url": "https://apttusdemo--apttus-config2.na34.visual.force.com/servlet/servlet.FileDownload?file=00P61000000VQFIEA4"
+        },
+
+
+            {
+                title: '',
+                callback_id: '123',
+                "color": "#62A70F",
+                attachment_type: 'default',
+                actions: [
+                    {
+                        "name":"Add to Cart",
+                        "text": "Add to Cart",
+                        "value": "Add to Cart",
+                        "style": "primary",
+                        "type": "button",
+                    },
+                    {
+                        "name":"Configure",
+                        "text": "Configure",
+                        "value": "Configure",
+                        "type": "button",
+                    },
+                    {
+                        "name":"Compare",
+                        "text": "Compare",
+                        "value": "Compare",
+                        "type": "button",
+                    }
+                ]
+            },
+             {
+            "title": "",
+            "color": "#62A70F",
+            "fields": [
+                {
+                    "title": "Product Code",
+                    "value": "SW-SLCRM005",
+                    "short": true
+                },
+                {
+                    "title": "List Price",
+                    "value": "$195.00",
+                    "short": true
+                },
+            ],
+            "author_name": "Sales Global",
+            "author_icon": "https://api.slack.com/img/api/homepage_custom_integrations-2x.png",
+            "image_url": "https://apttusdemo--apttus-config2.na34.visual.force.com/servlet/servlet.FileDownload?file=00P61000000VQFKEA4"
+        },
+
+
+            {
+                title: '',
+                callback_id: '123',
+                "color": "#62A70F",
+                attachment_type: 'default',
+                actions: [
+                    {
+                        "name":"Add to Cart",
+                        "text": "Add to Cart",
+                        "value": "Add to Cart",
+                        "style": "primary",
+                        "type": "button",
+                    },
+                    {
+                        "name":"Configure",
+                        "text": "Configure",
+                        "value": "Configure",
+                        "type": "button",
+                    },
+                    {
+                        "name":"Compare",
+                        "text": "Compare",
+                        "value": "Compare",
+                        "type": "button",
+                    }
+                ]
+            },
+             {
+            "title": "",
+            "color": "#62A70F",
+            "fields": [
+                {
+                    "title": "Product Code",
+                    "value": "SW-SL004",
+                    "short": true
+                },
+                {
+                    "title": "List Price",
+                    "value": "$65.00",
+                    "short": true
+                },
+            ],
+            "author_name": "Sales Corporate",
+            "author_icon": "https://api.slack.com/img/api/homepage_custom_integrations-2x.png",
+            "image_url": "https://apttusdemo--apttus-config2.na34.visual.force.com/servlet/servlet.FileDownload?file=00P61000000VQFJEA4"
+        },
+
+
+            {
+                title: '',
+                callback_id: '123',
+                "color": "#62A70F",
+                attachment_type: 'default',
+                actions: [
+                    {
+                        "name":"Add to Cart",
+                        "text": "Add to Cart",
+                        "value": "Add to Cart",
+                        "style": "primary",
+                        "type": "button",
+                    },
+                    {
+                        "name":"Configure",
+                        "text": "Configure",
+                        "value": "Configure",
+                        "type": "button",
+                    },
+                    {
+                        "name":"Compare",
+                        "text": "Compare",
+                        "value": "Compare",
+                        "type": "button",
+                    }
+                ]
+            }
+        ]
+    });    
+});
+
+
+
+
+
+
+controller.hears('Cloud Server Solution', 'direct_message', function(bot, message) {
+
+    bot.reply(message, {
+        attachments:[
+            {
+            "title": "",
+            "color": "#62A70F",
+            "fields": [
+                {
+                    "title": "Product Code",
+                    "value": "CSS",
+                    "short": true
+                },
+                {
+                    "title": "List Price",
+                    "value": "$45,999.00",
+                    "short": true
+                },
+            ],
+            "author_name": "Cloud Server Solution",
+            "author_icon": "https://api.slack.com/img/api/homepage_custom_integrations-2x.png",
+            "image_url": "https://apttusdemo--apttus-config2.na34.visual.force.com/servlet/servlet.FileDownload?file=00P61000000VQFUEA4"
+        },
+
+
+            {
+                title: '',
+                callback_id: '123',
+                "color": "#62A70F",
+                attachment_type: 'default',
+                actions: [                   
+                    {
+                        "name":"Configure",
+                        "text": "Configure",
+                        "value": "Configure",
+                        "type": "button",
+                    }
+                    
+                ]
+            }           
+        ]
+    });    
+});
+
