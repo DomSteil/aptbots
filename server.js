@@ -612,7 +612,7 @@ controller.hears('product sheet', 'direct_message', function(bot, message) {
 
 
 
-controller.hears('compare', 'direct_message', function(bot, message) {
+controller.hears('Blade Servers', 'direct_message', function(bot, message) {
 
     bot.reply(message, {
         attachments:[
