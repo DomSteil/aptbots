@@ -545,3 +545,56 @@ controller.hears('interactive', 'direct_message', function(bot, message) {
         ]
     });    
 });
+
+
+
+controller.hears('product sheet', 'direct_message', function(bot, message) {
+
+    bot.reply(message, {
+        attachments:[
+            {
+            "title": "",
+            "color": "#62A70F",
+            "fields": [
+                {
+                    "title": "Product Code",
+                    "value": "HW-BL003",
+                    "short": true
+                },
+                {
+                    "title": "List Price",
+                    "value": "$4,954.00",
+            "short": true
+                }
+            ],
+            "author_name": "WS460c Gen8 Graphics Server Blade",
+            "author_icon": "https://api.slack.com/img/api/homepage_custom_integrations-2x.png",
+            "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKSIhgmREbJQpZnqBsFVL_3PBgZieXqZLNTpEuwHxj5CTEgZL4"
+        },
+
+
+            {
+                title: 'Do you want to get a quote for WS460c Gen8 Graphics Server Blade?',
+                callback_id: '123',
+                "color": "#62A70F",
+                attachment_type: 'default',
+                actions: [
+                    {
+                        "name":"yes",
+                        "text": "Yes",
+                        "value": "yes",
+                        "style": "primary",
+                        "type": "button",
+                    },
+                    {
+                        "name":"no",
+                        "text": "No",
+                        "value": "no",
+                        "style": "danger",
+                        "type": "button",
+                    }
+                ]
+            }
+        ]
+    });    
+});
