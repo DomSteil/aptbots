@@ -613,7 +613,7 @@ controller.hears('Approval Requests', 'direct_message', function(bot, message) {
 
 
 
-controller.hears('Blade Servers', 'direct_message', function(bot, message) {
+controller.hears('Blade Servers', function(bot, message) {
 
     bot.reply(message, {
         attachments:[
