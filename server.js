@@ -647,7 +647,7 @@ controller.hears('Blade Servers', 'direct_message', function(bot, message) {
                         "name":"Add to Cart",
                         "text": "Add to Cart",
                         "value": "Add to Cart",
-                        "style": "Primary",
+                        "style": "primary",
                         "type": "button",
                     },
                     {
@@ -689,7 +689,7 @@ controller.hears('Blade Servers', 'direct_message', function(bot, message) {
                         "name":"Add to Cart",
                         "text": "Add to Cart",
                         "value": "Add to Cart",
-                        "style": "Primary",
+                        "style": "primary",
                         "type": "button",
                     },
                     {
@@ -731,7 +731,7 @@ controller.hears('Blade Servers', 'direct_message', function(bot, message) {
                         "name":"Add to Cart",
                         "text": "Add to Cart",
                         "value": "Add to Cart",
-                        "style": "Primary",
+                        "style": "primary",
                         "type": "button",
                     },
                     {
