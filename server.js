@@ -591,7 +591,7 @@ controller.hears('product sheet', 'direct_message', function(bot, message) {
                 actions: [
                     {
                         "name":"Approve",
-                        "text": "Approved",
+                        "text": "Approve",
                         "value": "Approve",
                         "style": "primary",
                         "type": "button",
