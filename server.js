@@ -977,7 +977,7 @@ controller.hears('Cloud Server Solution', 'direct_message,direct_mention,mention
 
 
 
-controller.hears('Assets', 'direct_message', function(bot, message) {
+controller.hears('Assets', 'direct_message,direct_mention,mention', function(bot, message) {
 
     bot.reply(message, {
         attachments:[
