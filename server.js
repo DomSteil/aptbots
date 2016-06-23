@@ -1037,6 +1037,7 @@ controller.hears('Assets', 'direct_message,direct_mention,mention', function(bot
                             "text": "Wouldn't you prefer a good game of chess?",
                             "ok_text": "Yes",
                             "dismiss_text": "No"
+                        }
                     },
                     {
                         "name":"Expire",
