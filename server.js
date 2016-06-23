@@ -608,3 +608,143 @@ controller.hears('product sheet', 'direct_message', function(bot, message) {
         ]
     });    
 });
+
+
+
+
+controller.hears('compare', 'direct_message', function(bot, message) {
+
+    bot.reply(message, {
+        attachments:[
+            {
+            "title": "",
+            "color": "#62A70F",
+            "fields": [
+                {
+                    "title": "Product Code",
+                    "value": "HW-BL003",
+                    "short": true
+                },
+                {
+                    "title": "List Price",
+                    "value": "$4,954.00",
+                    "short": true
+                },
+            ],
+            "author_name": "WS460c Gen8 Graphics Server Blade",
+            "author_icon": "https://api.slack.com/img/api/homepage_custom_integrations-2x.png",
+            "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKSIhgmREbJQpZnqBsFVL_3PBgZieXqZLNTpEuwHxj5CTEgZL4"
+        },
+
+
+            {
+                title: 'Do you want to Buy this product?',
+                callback_id: '123',
+                "color": "#62A70F",
+                attachment_type: 'default',
+                actions: [
+                    {
+                        "name":"Add to Cart",
+                        "text": "Add to Cart",
+                        "value": "Add to Cart",
+                        "style": "Primary",
+                        "type": "button",
+                    },
+                    {
+                        "name":"Configure",
+                        "text": "Configure",
+                        "value": "Configure",
+                        "style": "Primary",
+                        "type": "button",
+                    }
+                ]
+            }
+             {
+            "title": "",
+            "color": "#62A70F",
+            "fields": [
+                {
+                    "title": "Product Code",
+                    "value": "HW-BL004",
+                    "short": true
+                },
+                {
+                    "title": "List Price",
+                    "value": "$7,786.00",
+                    "short": true
+                },
+            ],
+            "author_name": "BL660c Gen8 Server Blade",
+            "author_icon": "https://api.slack.com/img/api/homepage_custom_integrations-2x.png",
+            "image_url": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRqk-5LjSdH2qr0Ne4ba0_6ILR5HjBRvws9Sit4yhOsyfGbYGC8GA"
+        },
+
+
+            {
+                title: 'Do you want to Buy this product?',
+                callback_id: '123',
+                "color": "#62A70F",
+                attachment_type: 'default',
+                actions: [
+                    {
+                        "name":"Add to Cart",
+                        "text": "Add to Cart",
+                        "value": "Add to Cart",
+                        "style": "Primary",
+                        "type": "button",
+                    },
+                    {
+                        "name":"Configure",
+                        "text": "Configure",
+                        "value": "Configure",
+                        "style": "Primary",
+                        "type": "button",
+                    }
+                ]
+            }
+             {
+            "title": "",
+            "color": "#62A70F",
+            "fields": [
+                {
+                    "title": "Product Code",
+                    "value": "HW-BL003",
+                    "short": true
+                },
+                {
+                    "title": "List Price",
+                    "value": "$4,954.00",
+                    "short": true
+                },
+            ],
+            "author_name": "BL460c Gen8 Server Blade",
+            "author_icon": "https://api.slack.com/img/api/homepage_custom_integrations-2x.png",
+            "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRACAAbSbBjkLPKwl_VFKGlp9ETasobKRjsTkQaBFv820uJLbtV"
+        },
+
+
+            {
+                title: 'Do you want to Buy this product?',
+                callback_id: '123',
+                "color": "#62A70F",
+                attachment_type: 'default',
+                actions: [
+                    {
+                        "name":"Add to Cart",
+                        "text": "Add to Cart",
+                        "value": "Add to Cart",
+                        "style": "Primary",
+                        "type": "button",
+                    },
+                    {
+                        "name":"Configure",
+                        "text": "Configure",
+                        "value": "Configure",
+                        "style": "Primary",
+                        "type": "button",
+                    }
+                ]
+            }
+        ]
+    });    
+});
