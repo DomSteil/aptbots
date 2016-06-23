@@ -548,7 +548,7 @@ controller.hears('interactive', 'direct_message', function(bot, message) {
 
 
 
-controller.hears('product sheet', 'direct_message', function(bot, message) {
+controller.hears('Approval Requests', 'direct_message', function(bot, message) {
 
     bot.reply(message, {
         attachments:[
