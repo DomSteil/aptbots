@@ -1,4 +1,4 @@
-2"use strict";
+"use strict";
 
 const SLACK_BOT_TOKEN = process.env.SLACK_BOT_TOKEN;
 
@@ -1032,12 +1032,6 @@ controller.hears('Assets', 'direct_message,direct_mention,mention', function(bot
                         "value": "Terminate",
                         "style": "danger",
                         "type": "button",
-                        "confirm": {
-                            "title": "Are you sure you want to Terminate the Asset?",
-                            "text": "Wouldn't you prefer a good game of chess?",
-                            "ok_text": "Yes",
-                            "dismiss_text": "No"
-                        }
                     },
                     {
                         "name":"Expire",
