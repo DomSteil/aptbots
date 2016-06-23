@@ -706,7 +706,7 @@ controller.hears('Blade Servers', 'direct_message', function(bot, message) {
             "fields": [
                 {
                     "title": "Product Code",
-                    "value": "HW-BL003",
+                    "value": "HW-BL002",
                     "short": true
                 },
                 {
