@@ -1124,3 +1124,78 @@ controller.hears('Venture Industries', 'direct_message,direct_mention,mention', 
     });    
 });
 
+
+
+
+controller.hears('Renewals', 'direct_message,direct_mention,mention', function(bot, message) {
+
+    bot.reply(message, {
+        attachments:[
+            {
+            "title": "",
+            "color": "#62A70F",
+            "fields": [
+                {
+                    "title": "Account",
+                    "value": "Venture Industries",
+                    "short": true
+                },
+                {
+                    "title": "Contract End Date",
+                    "value": "6/30/2016",
+                    "short": true
+                },
+                {
+                    "title": "Primary Contact",
+                    "value": "Diego Francis",
+                    "short": true
+                },
+                {
+                    "title": "TAV",
+                    "value": "$155,000",
+                    "short": true
+                },
+            ],
+            "author_name": "Venture Industries",
+            "author_icon": "https://api.slack.com/img/api/homepage_custom_integrations-2x.png",
+            "image_url": "http://www.ventureind.com/new%20ventrure/images/ventureind_logo.gif"
+        },
+
+
+            {
+                title: '',
+                callback_id: '123',
+                "color": "#62A70F",
+                attachment_type: 'default',
+                actions: [                   
+                    {
+                        "name":"Renew Contract",
+                        "text": "Renew Contract",
+                        "value": "Renew Contract",
+                        "style": "Primary",
+                        "type": "button",
+                    },
+                    {
+                        "name":"Amend Contract",
+                        "text": "Amend Contract",
+                        "value": "Amend Contract",
+                        "type": "button",
+                    },
+                    {
+                        "name":"Generate",
+                        "text": "Generate",
+                        "value": "Generate",
+                        "type": "button",
+                    },
+                    {
+                        "name":"Email Primary Contact",
+                        "text": "Email Primary Contact",
+                        "value": "Email Primary Contact",
+                        "type": "button",
+                    }
+                    
+                ]
+            }           
+        ]
+    });    
+});
