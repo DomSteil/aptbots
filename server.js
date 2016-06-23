@@ -973,3 +973,76 @@ controller.hears('Cloud Server Solution', 'direct_message', function(bot, messag
     });    
 });
 
+
+
+
+controller.hears('Assets', 'direct_message', function(bot, message) {
+
+    bot.reply(message, {
+        attachments:[
+            {
+            "title": "",
+            "color": "#62A70F",
+            "fields": [
+                {
+                    "title": "Product Code",
+                    "value": "CSS",
+                    "short": true
+                },
+                {
+                    "title": "List Price",
+                    "value": "$45,999.00",
+                    "short": true
+                },
+                {
+                    "title": "Product Description",
+                    "value": "Our super cloud server configuration allows customers to create their own super cloud structure for their internal business users as well as their customer and partner networks.",
+                    "short": false
+                },
+            ],
+            "author_name": "Cloud Server Solution",
+            "author_icon": "https://api.slack.com/img/api/homepage_custom_integrations-2x.png",
+            "image_url": "https://echopath.com/wp-content/uploads/2014/07/iStock_000018938602Small.jpg"
+        },
+
+
+            {
+                title: '',
+                callback_id: '123',
+                "color": "#62A70F",
+                attachment_type: 'default',
+                actions: [                   
+                    {
+                        "name":"Renew",
+                        "text": "Renew",
+                        "value": "Renew",
+                        "style": "primary",
+                        "type": "button",
+                    },
+                    {
+                        "name":"Amend",
+                        "text": "Amend",
+                        "value": "Amend",
+                        "type": "button",
+                    },
+                    {
+                        "name":"Terminate",
+                        "text": "Terminate",
+                        "value": "Terminate",
+                        "style": "danger",
+                        "type": "button",
+                    },
+                    {
+                        "name":"Expire",
+                        "text": "Expire",
+                        "value": "Expire",
+                        "style": "danger",
+                        "type": "button",
+                    }
+                    
+                ]
+            }           
+        ]
+    });    
+});
+
