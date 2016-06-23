@@ -564,7 +564,16 @@ controller.hears('product sheet', 'direct_message', function(bot, message) {
                 {
                     "title": "List Price",
                     "value": "$4,954.00",
-            "short": true
+                    "short": true
+                },
+                {
+                    "title": "Discount",
+                    "value": "15%",
+                    "short": true
+                },
+                {
+                    "title": "Extended Price",
+                    "value": "$4,211.00"
                 }
             ],
             "author_name": "WS460c Gen8 Graphics Server Blade",
@@ -574,22 +583,22 @@ controller.hears('product sheet', 'direct_message', function(bot, message) {
 
 
             {
-                title: 'Do you want to get a quote for WS460c Gen8 Graphics Server Blade?',
+                title: 'Do you want to approve this quote?',
                 callback_id: '123',
                 "color": "#62A70F",
                 attachment_type: 'default',
                 actions: [
                     {
-                        "name":"yes",
-                        "text": "Yes",
-                        "value": "yes",
+                        "name":"Approve",
+                        "text": "Approved",
+                        "value": "Approve",
                         "style": "primary",
                         "type": "button",
                     },
                     {
-                        "name":"no",
-                        "text": "No",
-                        "value": "no",
+                        "name":"Reject",
+                        "text": "Reject",
+                        "value": "Reject",
                         "style": "danger",
                         "type": "button",
                     }
