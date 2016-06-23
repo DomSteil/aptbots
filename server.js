@@ -654,7 +654,6 @@ controller.hears('Blade Servers', 'direct_message', function(bot, message) {
                         "name":"Configure",
                         "text": "Configure",
                         "value": "Configure",
-                        "style": "Primary",
                         "type": "button",
                     }
                 ]
@@ -697,7 +696,6 @@ controller.hears('Blade Servers', 'direct_message', function(bot, message) {
                         "name":"Configure",
                         "text": "Configure",
                         "value": "Configure",
-                        "style": "Primary",
                         "type": "button",
                     }
                 ]
@@ -740,7 +738,6 @@ controller.hears('Blade Servers', 'direct_message', function(bot, message) {
                         "name":"Configure",
                         "text": "Configure",
                         "value": "Configure",
-                        "style": "Primary",
                         "type": "button",
                     }
                 ]
