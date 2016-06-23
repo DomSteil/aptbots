@@ -942,10 +942,15 @@ controller.hears('Cloud Server Solution', 'direct_message', function(bot, messag
                     "value": "$45,999.00",
                     "short": true
                 },
+                {
+                    "title": "Product Description",
+                    "value": "Our super cloud server configuration allows customers to create their own super cloud structure for their internal business users as well as their customer and partner networks.",
+                    "short": false
+                },
             ],
             "author_name": "Cloud Server Solution",
             "author_icon": "https://api.slack.com/img/api/homepage_custom_integrations-2x.png",
-            "image_url": "https://apttusdemo--apttus-config2.na34.visual.force.com/servlet/servlet.FileDownload?file=00P61000000VQFUEA4"
+            "image_url": "https://echopath.com/wp-content/uploads/2014/07/iStock_000018938602Small.jpg"
         },
 
 
