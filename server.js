@@ -1046,3 +1046,80 @@ controller.hears('Assets', 'direct_message', function(bot, message) {
     });    
 });
 
+
+
+
+controller.hears('Venture Industries', 'direct_message', function(bot, message) {
+
+    bot.reply(message, {
+        attachments:[
+            {
+            "title": "",
+            "color": "#62A70F",
+            "fields": [
+                {
+                    "title": "Account",
+                    "value": "Venture Industries",
+                    "short": true
+                },
+                {
+                    "title": "Close Date",
+                    "value": "6/30/2016",
+                    "short": true
+                },
+                {
+                    "title": "Price List",
+                    "value": "Tier 1 Hardware & Software",
+                    "short": true
+                },
+                {
+                    "title": "Pricing Agreement Number",
+                    "value": "00001410.0",
+                    "short": true
+                },
+            ],
+            "author_name": "Venture Industries Opportunity",
+            "author_icon": "https://api.slack.com/img/api/homepage_custom_integrations-2x.png",
+            "image_url": "http://www.ventureind.com/new%20ventrure/images/ventureind_logo.gif"
+        },
+
+
+            {
+                title: '',
+                callback_id: '123',
+                "color": "#62A70F",
+                attachment_type: 'default',
+                actions: [                   
+                    {
+                        "name":"Create Quote",
+                        "text": "Renew",
+                        "value": "Renew",
+                        "type": "button",
+                    },
+                    {
+                        "name":"Create Agreement",
+                        "text": "Amend",
+                        "value": "Amend",
+                        "type": "button",
+                    },
+                    {
+                        "name":"Close Won",
+                        "text": "Terminate",
+                        "value": "Terminate",
+                        "style": "primary",
+                        "type": "button",
+                    },
+                    {
+                        "name":"Close Lost",
+                        "text": "Expire",
+                        "value": "Expire",
+                        "style": "danger",
+                        "type": "button",
+                    }
+                    
+                ]
+            }           
+        ]
+    });    
+});
+
