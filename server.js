@@ -962,9 +962,27 @@ controller.hears('Cloud Server Solution', 'direct_message,direct_mention,mention
                 attachment_type: 'default',
                 actions: [                   
                     {
-                        "name":"Configure",
-                        "text": "Configure",
-                        "value": "Configure",
+                        "name":"Attributes",
+                        "text": "Attributes",
+                        "value": "Attributes",
+                        "type": "button",
+                    },
+                    {
+                        "name":"Options",
+                        "text": "Options",
+                        "value": "Options",
+                        "type": "button",
+                    },
+                    {
+                        "name":"Compare",
+                        "text": "Compare",
+                        "value": "Compare",
+                        "type": "button",
+                    },
+                    {
+                        "name":"Checkout",
+                        "text": "Checkout",
+                        "value": "Checkout",
                         "type": "button",
                     }
                     
@@ -1172,7 +1190,7 @@ controller.hears('Renewals', 'direct_message,direct_mention,mention', function(b
                         "name":"Renew Contract",
                         "text": "Renew Contract",
                         "value": "Renew Contract",
-                        "style": "Primary",
+                        "style": "primary",
                         "type": "button",
                     },
                     {
