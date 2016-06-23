@@ -65,6 +65,33 @@ let formatOpportunities = opportunities => {
             fields.push({title: "Close Date", value: opportunity.get("CloseDate"), short:true});
             fields.push({title: "Amount", value: new Intl.NumberFormat('en-US', {style: 'currency', currency: 'USD'}).format(opportunity.get("Amount")), short:true});
             fields.push({title: "Probability", value: opportunity.get("Probability") + "%", short:true});
+
+             {
+                title: 'Do you want to learn more about Apttus Aptbots?',
+                callback_id: '123',
+                "color": "#62A70F",
+                attachment_type: 'default',
+                actions: [
+                    {
+                        "name":"yes",
+                        "text": "Yes",
+                        "value": "yes",
+                        "style": "primary",
+                        "type": "button",
+                    },
+                    {
+                        "name":"no",
+                        "text": "No",
+                        "value": "no",
+                        "style": "danger",
+                        "type": "button",
+                    }
+                ]
+            }
+
+
+
+
             attachments.push({color: color, fields: fields});
         });
         return attachments;
