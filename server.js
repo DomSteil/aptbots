@@ -1092,27 +1092,27 @@ controller.hears('Venture Industries', 'direct_message', function(bot, message) 
                 actions: [                   
                     {
                         "name":"Create Quote",
-                        "text": "Renew",
-                        "value": "Renew",
+                        "text": "Create Quote",
+                        "value": "Create Quote",
                         "type": "button",
                     },
                     {
                         "name":"Create Agreement",
-                        "text": "Amend",
-                        "value": "Amend",
+                        "text": "Create Agreement",
+                        "value": "Create Agreement",
                         "type": "button",
                     },
                     {
                         "name":"Close Won",
-                        "text": "Terminate",
-                        "value": "Terminate",
+                        "text": "Close Won",
+                        "value": "Close Won",
                         "style": "primary",
                         "type": "button",
                     },
                     {
                         "name":"Close Lost",
-                        "text": "Expire",
-                        "value": "Expire",
+                        "text": "Close Lost",
+                        "value": "Close Lost",
                         "style": "danger",
                         "type": "button",
                     }
