@@ -218,6 +218,28 @@ let createCase = newCase => {
 };
 
 
+let createProduct = product => {
+
+    return new Promise((resolve, reject) => {
+        let c = nforce.createSObject('Product2');
+        c.set('Name', product.name);
+        c.set('ProductCode', product.code);
+        c.set('Apttus_Config2__ConfigurationType__c', product.configType);
+        c.set('IsActive', 'True');
+
+                org.insert({sobject: c}, err => {
+            if (err) {
+                console.error(err);
+                reject("An error occurred while creating the Product");
+            } else {
+                resolve(c);
+            }
+        });
+    });
+};
+
+
+
 login();
 
 exports.org = org;
@@ -231,3 +253,4 @@ exports.createQuote = createQuote;
 exports.createCase = createCase;
 exports.createISR = createISR;
 exports.createNDA = createNDA;
+exports.createProduct = createProduct;

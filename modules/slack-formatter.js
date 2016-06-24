@@ -132,6 +132,15 @@ let formatNDA = nda => {
 
 };
 
+let formatProduct = product => {
+
+    let fields = [];
+    fields.push({title: "Product Name:", value: product.get("Name"), short: true});
+    fields.push({title: "Product Code:", value: product.get("ProductCode"), short: true});
+    fields.push({title: "Configuration Type:", value: product.get("Apttus_Config2__ConfigurationType__c"), short: true});
+    return [{color: color, fields: fields}];
+};
+
 exports.formatAccounts = formatAccounts;
 exports.formatContacts = formatContacts;
 exports.formatContact = formatContact;
@@ -141,3 +150,4 @@ exports.formatQuote = formatQuote;
 exports.formatAgreement = formatAgreement;
 exports.formartISR = formatISR;
 exports.formatNDA = formatNDA;
+exports.formatProduct = formatProduct;
