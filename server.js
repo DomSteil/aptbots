@@ -1217,3 +1217,86 @@ controller.hears('Renewals', 'direct_message,direct_mention,mention', function(b
         ]
     });    
 });
+
+
+
+controller.hears('Future Contract Hypercard', 'direct_message,direct_mention,mention', function(bot, message) {
+
+    bot.reply(message, {
+        attachments:[
+            {
+            "title": "",
+            "color": "#62A70F",
+            "fields": [
+                {
+                    "title": "Account",
+                    "value": "Venture Industries",
+                    "short": true
+                },
+                {
+                    "title": "Contract Start Date",
+                    "value": "6/24/2016",
+                    "short": true
+                },
+                {
+                    "title": "Contract End Date",
+                    "value": "6/23/2017",
+                    "short": true
+                },
+                {
+                    "title": "TAV",
+                    "value": "$155,000",
+                    "short": true
+                },
+            ],
+            "author_name": "Venture Industries",
+            "author_icon": "https://api.slack.com/img/api/homepage_custom_integrations-2x.png",
+            "image_url": "http://www.ventureind.com/new%20ventrure/images/ventureind_logo.gif"
+        },
+
+
+            {
+                title: '',
+                callback_id: '123',
+                "color": "#62A70F",
+                attachment_type: 'default',
+                actions: [
+                    {
+                        "name":"Generate",
+                        "text": "Generate",
+                        "value": "Generate",
+                        "type": "button",
+                    },                   
+                    {
+                        "name":"Renew Contract",
+                        "text": "Renew Contract",
+                        "value": "Renew Contract",
+                        "style": "primary",
+                        "type": "button",
+                    },
+                    {
+                        "name":"Amend Contract",
+                        "text": "Amend Contract",
+                        "value": "Amend Contract",
+                        "type": "button",
+                    },
+                    {
+                        "name":"Terminate",
+                        "text": "Terminate",
+                        "value": "Terminate",
+                        "style": "danger",
+                        "type": "button",
+                    },
+                    {
+                        "name":"Expire",
+                        "text": "Expire",
+                        "value": "Expire",
+                        "style": "danger",
+                        "type": "button",
+                    }
+                    
+                ]
+            }           
+        ]
+    });    
+});
