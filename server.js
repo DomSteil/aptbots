@@ -448,7 +448,7 @@ controller.hears(['New Product', 'Create Product'], 'direct_message,direct_menti
 
         convo.ask("What is the Configuration Type?", (response, convo) => {
             configType = response.text;
-            salesforce.createProduct({Name: name, code: code, configType: configType})
+            salesforce.createProduct({name: name, code: code, configType: configType})
                 .then(product => {
                     bot.reply(message, {
                         text: "I created the product",
