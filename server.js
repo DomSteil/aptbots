@@ -367,58 +367,6 @@ controller.hears(['create agreement', 'new agreement', 'create contract', 'new c
 
 });
 
-controller.hears(['New NDA', 'Create NDA', 'NDA'], 'direct_message,direct_mention,mention', (bot, message) => {
-
-    let account,
-        contact,
-        disclosed;
-
-    let askAgreementAccount = (response, convo) => {
-
-        convo.ask("Which Account?", (response, convo) => {
-            account = response.text;
-            askContact(response, convo);
-            convo.next();
-        });
-
-    };
-
-    let askContact = (response, convo) => {
-
-        convo.ask("Who should I send it to?", (response, convo) => {
-            contact = response.text;
-            askDisclose(response, convo);
-            convo.next();
-        });
-    };
-
-    let askDisclose = (response, convo) => {
-
-        convo.ask("What is being disclosed?", (response, convo) => {
-            disclosed = response.text;
-            salesforce.createNDA({Account: account, contact: contact, disclosed: disclosed})
-                .then(nda => {
-                    bot.reply(message, {
-                        text: "I created the NDA and sent it to contact:",
-                        attachments: formatter.formatNDA(nda)
-
-                    });
-                    convo.next();
-                })
-                .catch(error => {
-                    bot.reply(message, error);
-                    convo.next();
-                });
-        });
-
-    };
-
-    bot.reply(message, "OK, I can help you with that!");
-    bot.startConversation(message, askAgreementAccount);
-
-});
-
-
 controller.hears(['create ISR', 'new ISR', 'log ISR', ], 'direct_message,direct_mention,mention', (bot, message) => {
 
     let isr,
