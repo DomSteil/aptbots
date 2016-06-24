@@ -225,7 +225,6 @@ let createProduct = product => {
         c.set('Name', product.name);
         c.set('ProductCode', product.code);
         c.set('Apttus_Config2__ConfigurationType__c', product.configType);
-        c.set('IsActive', 'True');
 
                 org.insert({sobject: c}, err => {
             if (err) {
