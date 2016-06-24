@@ -130,7 +130,7 @@ let formatNDA = nda => {
     fields.push({title: "Type:", value: "NDA", short: true});
     return [{color: color, fields: fields}];
 
-}
+};
 
 exports.formatAccounts = formatAccounts;
 exports.formatContacts = formatContacts;
