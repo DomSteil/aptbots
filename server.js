@@ -24,7 +24,7 @@ controller.hears(['help'], 'direct_message,direct_mention,mention', (bot, messag
         text: `Hello there, my name is Aptbot. You can ask me to do Salesforce and Apttus things like:
     "Search account Acme" or "Search Acme in acccounts"
     "Search contact Lisa Smith" or "Search Lisa Smith in contacts"
-    "Search opportunity Big Deal"
+    "Search opportunity Big Deal "
     "Create contact"
     "Create case"
     "Create Quote"
