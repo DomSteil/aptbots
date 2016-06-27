@@ -78,7 +78,7 @@ let findOpportunity = name => {
 let findQuote = name => {
 
     return new Promise((resolve, reject) => {
-        let q = "SELECT Id, Name, Apttus_Proposal__Amount__c, Apttus_Proposal__Account__c, Apttus_Proposal__Opportunity__c, Apttus_Proposal__Approval_Stage__c, FROM Apttus_Proposal__Proposal__c WHERE Name LIKE '%" + name + "%' ORDER BY amount DESC LIMIT 5";
+        let q = "SELECT Id, Name, Apttus_Proposal__Amount__c, Apttus_Proposal__Account__c, Apttus_Proposal__Opportunity__c, Apttus_Proposal__Approval_Stage__c FROM Apttus_Proposal__Proposal__c WHERE Name LIKE '%" + name + "%' ORDER BY amount DESC LIMIT 5";
         org.query({query: q}, (err, resp) => {
             if (err) {
                 reject("An error as occurred");
