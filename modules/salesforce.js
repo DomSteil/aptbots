@@ -247,14 +247,13 @@ let createCart = cart => {
         c.set('CPQ_Actions__c', 'Create Cart');
 
 
-            org.inser({sobject: c}, err => {
+            org.insert({sobject: c}, err => {
         if (err) {
             console.error(err);
             reject("An error occured while creating the Cart");
         } else {
             resolve(c);
             }
-        }
         });
     });
 };
@@ -266,14 +265,13 @@ let searchProducts = searchProducts => {
         c.set('CPQ_Actions__c', 'Search Products');
 
 
-            org.inser({sobject: c}, err => {
+            org.insert({sobject: c}, err => {
         if (err) {
             console.error(err);
             reject("An error occured while searching in the Cart");
         } else {
             resolve(c);
             }
-        }
         });
     });
 };
@@ -285,14 +283,13 @@ let addToCart = addToCart => {
         c.set('CPQ_Actions__c', 'Add to Cart');
 
 
-            org.inser({sobject: c}, err => {
+            org.insert({sobject: c}, err => {
         if (err) {
             console.error(err);
             reject("An error occured while adding a product to the Cart");
         } else {
             resolve(c);
             }
-        }
         });
     });
 };
@@ -304,14 +301,13 @@ let finalizeCart = fianlizeCart => {
         c.set('CPQ_Actions__c', 'Finalize');
 
 
-            org.inser({sobject: c}, err => {
+            org.insert({sobject: c}, err => {
         if (err) {
             console.error(err);
             reject("An error occured while finalizing the Cart");
         } else {
             resolve(c);
             }
-        }
         });
     });
 };
