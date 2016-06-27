@@ -313,7 +313,6 @@ controller.hears(['create agreement', 'new agreement', 'create contract', 'new c
                 type = response.text;
                 askStatus(response, convo);
                 convo.next();
-                // do something awesome here.
             }
         },
         {
@@ -571,11 +570,12 @@ controller.hears('interactive', 'direct_message,direct_mention,mention', functio
             "author_link": "https://twitter.com/domsteil",
             "author_icon": "https://api.slack.com/img/api/homepage_custom_integrations-2x.png",
             "image_url": "https://pbs.twimg.com/profile_images/725549910569807873/E4X7rxHt.jpg"
+            "thumb_url": "https://pbs.twimg.com/profile_images/646414713140678656/eG9g7VqI.jpg",
         },
 
 
             {
-                title: 'Do you want to learn more about Apttus Aptbots?',
+                title: 'Do you like Apttus Aptbots?',
                 callback_id: '123',
                 "color": "#62A70F",
                 attachment_type: 'default',
