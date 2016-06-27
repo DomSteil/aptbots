@@ -25,10 +25,10 @@ controller.hears(['help'], 'direct_message,direct_mention,mention', (bot, messag
     "Search account Acme" or "Search Acme in acccounts"
     "Search contact Lisa Smith" or "Search Lisa Smith in contacts"
     "Search Opportunity Big Deal "
-    "Search Assets"
-    "Search Invoices"
-    "Search Agreements"
-    "Search Orders"
+    "Search for Assets"
+    "Search for Invoices"
+    "Search for Agreements"
+    "Search for Orders"
     "Create contact"
     "Create case"
     "Create Quote"
@@ -66,6 +66,30 @@ controller.hears(['top (.*) deals', 'top (.*) opportunities'], 'direct_message,d
             attachments: formatter.formatOpportunities(opportunities)
         }))
         .catch(error => bot.reply(message, error));
+});
+
+controller.hears(['search opportunity (.*)', 'find opportunity (.*)'], 'direct_message,direct_mention,mention', (bot, message) => {
+
+    let name = message.match[1];
+    salesforce.findOpportunity(name)
+        .then(opportunities => bot.reply(message, {
+            text: "I found these opportunities matching  '" + name + "':",
+            attachments: formatter.formatOpportunities(opportunities)
+        }))
+        .catch(error => bot.reply(message, error));
+
+});
+
+controller.hears(['search opportunity (.*)', 'find opportunity (.*)'], 'direct_message,direct_mention,mention', (bot, message) => {
+
+    let name = message.match[1];
+    salesforce.findOpportunity(name)
+        .then(opportunities => bot.reply(message, {
+            text: "I found these opportunities matching  '" + name + "':",
+            attachments: formatter.formatOpportunities(opportunities)
+        }))
+        .catch(error => bot.reply(message, error));
+
 });
 
 controller.hears(['search opportunity (.*)', 'find opportunity (.*)'], 'direct_message,direct_mention,mention', (bot, message) => {
