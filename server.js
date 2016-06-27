@@ -21,10 +21,14 @@ bot.startRTM(err => {
 
 controller.hears(['help'], 'direct_message,direct_mention,mention', (bot, message) => {
     bot.reply(message, {
-        text: `Hello there, my name is Aptbot. You can ask me to do Salesforce and Apttus things like:
+        text: `Hello there, my name is Aptbot. You can ask me to do Apttus things like:
     "Search account Acme" or "Search Acme in acccounts"
     "Search contact Lisa Smith" or "Search Lisa Smith in contacts"
-    "Search opportunity Big Deal "
+    "Search Opportunity Big Deal "
+    "Search Assets"
+    "Search Invoices"
+    "Search Agreements"
+    "Search Orders"
     "Create contact"
     "Create case"
     "Create Quote"
@@ -557,7 +561,6 @@ controller.hears(['create ISR', 'new ISR', 'log ISR', ], 'direct_message,direct_
     bot.startConversation(message, askIsrNumber);
 
 });
-
 
 
 controller.hears('Apttus', 'direct_message,direct_mention,mention', function(bot, message) {
