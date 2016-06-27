@@ -547,7 +547,7 @@ controller.hears(['create ISR', 'new ISR', 'log ISR', ], 'direct_message,direct_
 
 
 
-controller.hears('interactive', 'direct_message,direct_mention,mention', function(bot, message) {
+controller.hears('Apttus', 'direct_message,direct_mention,mention', function(bot, message) {
 
     bot.reply(message, {
         attachments:[
@@ -566,8 +566,6 @@ controller.hears('interactive', 'direct_message,direct_mention,mention', functio
             "short": true
                 }
             ],
-            "author_name": "Dom Steil",
-            "author_link": "https://twitter.com/domsteil",
             "author_icon": "https://api.slack.com/img/api/homepage_custom_integrations-2x.png",
             "image_url": "https://pbs.twimg.com/profile_images/646414713140678656/eG9g7VqI.jpg"
         },
