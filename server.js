@@ -564,7 +564,7 @@ controller.hears(['create ISR', 'new ISR', 'log ISR', ], 'direct_message,direct_
 });
 
 
-controller.hears('Apttus', 'direct_message,direct_mention,mention', function(bot, message) {
+controller.hears('Aptbots', 'direct_message,direct_mention,mention', function(bot, message) {
 
     bot.reply(message, {
         attachments:[
