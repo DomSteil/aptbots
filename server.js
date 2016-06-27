@@ -569,8 +569,7 @@ controller.hears('interactive', 'direct_message,direct_mention,mention', functio
             "author_name": "Dom Steil",
             "author_link": "https://twitter.com/domsteil",
             "author_icon": "https://api.slack.com/img/api/homepage_custom_integrations-2x.png",
-            "image_url": "https://pbs.twimg.com/profile_images/725549910569807873/E4X7rxHt.jpg",
-            "thumb_url": "https://pbs.twimg.com/profile_images/646414713140678656/eG9g7VqI.jpg"
+            "image_url": "https://pbs.twimg.com/profile_images/646414713140678656/eG9g7VqI.jpg"
         },
 
 
