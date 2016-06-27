@@ -75,7 +75,7 @@ let formatOpportunities = opportunities => {
 };
 
 
-let formatFindQuotes = quotes => {
+let formatFindQuotes = quote1 => {
 
     if (quotes && quotes.length>0) {
         let attachments = [];
