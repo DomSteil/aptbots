@@ -76,6 +76,19 @@ controller.hears(['search opportunity (.*)', 'find opportunity (.*)'], 'direct_m
 
 });
 
+controller.hears(['search quote (.*)', 'find quote (.*)'], 'direct_message,direct_mention,mention', (bot, message) => {
+
+    let name = message.match[1];
+    salesforce.findQuote(name)
+        .then(quotes => bot.reply(message, {
+            text: "I found these quotes matching  '" + name + "':",
+            attachments: formatter.formatQuotes(quotes)
+        }))
+        .catch(error => bot.reply(message, error));
+
+});
+
+
 controller.hears(['create case', 'new case'], 'direct_message,direct_mention,mention', (bot, message) => {
 
     let subject,
