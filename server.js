@@ -80,29 +80,6 @@ controller.hears(['search opportunity (.*)', 'find opportunity (.*)'], 'direct_m
 
 });
 
-controller.hears(['search opportunity (.*)', 'find opportunity (.*)'], 'direct_message,direct_mention,mention', (bot, message) => {
-
-    let name = message.match[1];
-    salesforce.findOpportunity(name)
-        .then(opportunities => bot.reply(message, {
-            text: "I found these opportunities matching  '" + name + "':",
-            attachments: formatter.formatOpportunities(opportunities)
-        }))
-        .catch(error => bot.reply(message, error));
-
-});
-
-controller.hears(['search opportunity (.*)', 'find opportunity (.*)'], 'direct_message,direct_mention,mention', (bot, message) => {
-
-    let name = message.match[1];
-    salesforce.findOpportunity(name)
-        .then(opportunities => bot.reply(message, {
-            text: "I found these opportunities matching  '" + name + "':",
-            attachments: formatter.formatOpportunities(opportunities)
-        }))
-        .catch(error => bot.reply(message, error));
-
-});
 
 controller.hears(['search quote (.*)', 'find quote (.*)'], 'direct_message,direct_mention,mention', (bot, message) => {
 
