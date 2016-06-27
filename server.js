@@ -233,7 +233,7 @@ controller.hears(['Create quote', 'new quote', 'Quote', 'New proposal', 'Create 
             salesforce.createQuote({name: name, opportunityName: opportunityName, priceList: priceList})
                 .then(quote => {
                     bot.reply(message, {
-                        text: "I created the quote:",
+                        text: "I created the quote, would you like to Configure Products?",
                         attachments: formatter.formatQuote(quote)
                     });
                     convo.next();
