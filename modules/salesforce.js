@@ -75,7 +75,7 @@ let findOpportunity = name => {
 };
 
 
-let findQuote = name => {
+let findProposals = name => {
 
     return new Promise((resolve, reject) => {
         let q = "SELECT Id, Name, Apttus_Proposal__Amount__c, Apttus_Proposal__Account__c, Apttus_Proposal__Opportunity__c, Apttus_Proposal__Approval_Stage__c FROM Apttus_Proposal__Proposal__c WHERE Name LIKE '%" + name + "%' ORDER BY amount DESC LIMIT 5";
@@ -89,6 +89,72 @@ let findQuote = name => {
     });
 
 };
+
+
+
+let findAgreement = name => {
+
+    return new Promise((resolve, reject) => {
+        let q = "SELECT Id, Name, Apttus__Account__c, Apttus__Contract_End_Date__c, Apttus__Contract_Start_Date__c, Apttus__Primary_Contact__c, Apttus__Status_Category__c, Apttus__Total_Contract_Value__c FROM Apttus__APTS_Agreement__c WHERE Name LIKE '%" + name + "%' ORDER BY amount DESC LIMIT 5";
+        org.query({query: q}, (err, resp) => {
+            if (err) {
+                reject("An error as occurred");
+            } else {
+                resolve(resp.records);
+            }
+        });
+    });
+
+};
+
+let findAsset = name => {
+
+    return new Promise((resolve, reject) => {
+        let q = "SELECT Id, Apttus_Config2__AssetStatus__c, Apttus_Config2__EndDate__c, Apttus_Config2__LineType__c, Apttus_Config2__PriceMethod__c, Apttus_Config2__PriceType__c,  FROM Apttus_Config2__AssetLineItem__c WHERE Name LIKE '%" + name + "%' ORDER BY amount DESC LIMIT 5";
+        org.query({query: q}, (err, resp) => {
+            if (err) {
+                reject("An error as occurred");
+            } else {
+                resolve(resp.records);
+            }
+        });
+    });
+
+};
+
+
+let findOrder = name => {
+
+    return new Promise((resolve, reject) => {
+        let q = "SELECT Id, Name, Total_Order_Amount__c, Apttus_Config2__Type__c, Apttus_Config2__ActivatedDate__c FROM Apttus_Config2__Order__c WHERE Name LIKE '%" + name + "%' ORDER BY amount DESC LIMIT 5";
+        org.query({query: q}, (err, resp) => {
+            if (err) {
+                reject("An error as occurred");
+            } else {
+                resolve(resp.records);
+            }
+        });
+    });
+
+};
+
+let findInvoice = name => {
+
+    return new Promise((resolve, reject) => {
+        let q = "SELECT Id, Name, Apttus_Billing__Status__c FROM Apttus_Billing__Invoice__c WHERE Name LIKE '%" + name + "%' ORDER BY amount DESC LIMIT 5";
+        org.query({query: q}, (err, resp) => {
+            if (err) {
+                reject("An error as occurred");
+            } else {
+                resolve(resp.records);
+            }
+        });
+    });
+
+};
+
+
+
 
 let getTopOpportunities = count => {
 
