@@ -309,6 +309,7 @@ let createCart = cart => {
     return new Promise((resolve, reject) => {
         let c = nforce.createSobject('Slack_Requests__c');
         c.set('CPQ_Actions__c', 'Create Cart');
+        c.set('Type__c', 'CPQ');
 
 
             org.insert({sobject: c}, err => {
@@ -327,6 +328,7 @@ let searchProducts = searchProducts => {
     return new Promise((resolve, reject) => {
         let c = nforce.createSobject('Slack_Requests__c');
         c.set('CPQ_Actions__c', 'Search Products');
+        c.set('Type__c', 'CPQ');
 
 
             org.insert({sobject: c}, err => {
@@ -345,6 +347,7 @@ let addToCart = addToCart => {
     return new Promise((resolve, reject) => {
         let c = nforce.createSobject('Slack_Requests__c');
         c.set('CPQ_Actions__c', 'Add to Cart');
+        c.set('Type__c', 'CPQ');
 
 
             org.insert({sobject: c}, err => {
@@ -363,6 +366,7 @@ let finalizeCart = fianlizeCart => {
     return new Promise((resolve, reject) => {
         let c = nforce.createSobject('Slack_Requests__c');
         c.set('CPQ_Actions__c', 'Finalize');
+        c.set('Type__c', 'CPQ')
 
 
             org.insert({sobject: c}, err => {
