@@ -159,6 +159,7 @@ exports.formatContact = formatContact;
 exports.formatOpportunities = formatOpportunities;
 exports.formatCase = formatCase;
 exports.formatQuote = formatQuote;
+exports.formatQuotes = formatQuotes;
 exports.formatAgreement = formatAgreement;
 exports.formartISR = formatISR;
 exports.formatNDA = formatNDA;
