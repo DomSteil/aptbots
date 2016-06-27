@@ -154,8 +154,6 @@ let findInvoice = name => {
 };
 
 
-
-
 let getTopOpportunities = count => {
 
     count = count || 5;
@@ -385,7 +383,11 @@ exports.org = org;
 exports.findAccount = findAccount;
 exports.findContact = findContact;
 exports.findOpportunity = findOpportunity;
-exports.findQuote = findQuote;
+exports.findProposals = findProposals;
+exports.findAgreement = findAgreement;
+exports.findInvoice = findInvoice;
+exports.findOrder = findOrder;
+exports.findAsset = findAsset;
 exports.getTopOpportunities = getTopOpportunities;
 exports.createContact = createContact;
 exports.createAgreement = createAgreement;
