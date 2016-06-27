@@ -74,6 +74,22 @@ let findOpportunity = name => {
 
 };
 
+
+let findQuote = name => {
+
+    return new Promise((resolve, reject) => {
+        let q = "SELECT Id, Name, Apttus_Proposal__Amount__c, Apttus_Proposal__Account__c, Apttus_Proposal__Opportunity__c, Apttus_Proposal__Primary_Contact__c, Apttus_Proposal__Approval_Stage__c, Apttus_QPConfig__PriceListId__c, Apttus_Proposal__Discount_Percent__c, Apttus_Proposal__Grand_Total__c,  FROM Apttus_Proposal__Proposal__c WHERE Name LIKE '%" + name + "%' ORDER BY amount DESC LIMIT 5";
+        org.query({query: q}, (err, resp) => {
+            if (err) {
+                reject("An error as occurred");
+            } else {
+                resolve(resp.records);
+            }
+        });
+    });
+
+};
+
 let getTopOpportunities = count => {
 
     count = count || 5;
@@ -222,6 +238,7 @@ exports.org = org;
 exports.findAccount = findAccount;
 exports.findContact = findContact;
 exports.findOpportunity = findOpportunity;
+exports.findQuote = findQuote;
 exports.getTopOpportunities = getTopOpportunities;
 exports.createContact = createContact;
 exports.createAgreement = createAgreement;
