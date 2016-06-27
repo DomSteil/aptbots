@@ -82,7 +82,7 @@ controller.hears(['search quote (.*)', 'find quote (.*)'], 'direct_message,direc
     salesforce.findQuote(name)
         .then(quotes => bot.reply(message, {
             text: "I found these quotes matching  '" + name + "':",
-            attachments: formatter.formatQuotes(quotes)
+            attachments: formatter.formatFindQuotes(quotes)
         }))
         .catch(error => bot.reply(message, error));
 
