@@ -29,7 +29,7 @@ controller.hears(['help'], 'direct_message,direct_mention,mention', (bot, messag
     "Create case"
     "Create Quote"
     "Create Agreement"
-    "Log ISR"`
+    "Log an ISR"`
     });
 });
 
