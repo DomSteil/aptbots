@@ -83,7 +83,7 @@ let formatFindQuotes = findQuote => {
             let fields = [];
             fields.push({title: "Quote Name", value: findQuote.get("Name"), short:true});
             fields.push({title: "Link", value: "https://login.salesforce.com/" + findQuote.getId(), short:true});
-          //  fields.push({title: "Opportunity", value: quote1.get("Apttus_Proposal__Opportunity__c"), short:true});
+            fields.push({title: "Opportunity", value: findQuote.get("Apttus_Proposal__Opportunity__c"), short:true});
             fields.push({title: "Amount", value: new Intl.NumberFormat('en-US', {style: 'currency', currency: 'USD'}).format(findQuote.get("Apttus_Proposal__Amount__c")), short:true});
             fields.push({title: "Status", value: findQuote.get("Apttus_Proposal__Approval_Stage__c") + "%", short:true});
             attachments.push({color: color, fields: fields});
