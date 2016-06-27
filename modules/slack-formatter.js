@@ -75,17 +75,17 @@ let formatOpportunities = opportunities => {
 };
 
 
-let formatQuotes = quotes => {
+let formatFindQuotes = quotes => {
 
     if (quotes && quotes.length>0) {
         let attachments = [];
-        quotes.forEach(quote => {
+        quotes.forEach(quote1 => {
             let fields = [];
-            fields.push({title: "Quote Name", value: quote.get("Name"), short:true});
-            fields.push({title: "Link", value: "https://login.salesforce.com/" + quote.getId(), short:true});
-            fields.push({title: "Opportunity", value: quote.get("Apttus_Proposal__Opportunity__c"), short:true});
-            fields.push({title: "Amount", value: new Intl.NumberFormat('en-US', {style: 'currency', currency: 'USD'}).format(quote.get("Apttus_Proposal__Amount__c")), short:true});
-            fields.push({title: "Status", value: quote.get("Apttus_Proposal__Approval_Stage__c") + "%", short:true});
+            fields.push({title: "Quote Name", value: quote1.get("Name"), short:true});
+            fields.push({title: "Link", value: "https://login.salesforce.com/" + quote1.getId(), short:true});
+            fields.push({title: "Opportunity", value: quote1.get("Apttus_Proposal__Opportunity__c"), short:true});
+            fields.push({title: "Amount", value: new Intl.NumberFormat('en-US', {style: 'currency', currency: 'USD'}).format(quote1.get("Apttus_Proposal__Amount__c")), short:true});
+            fields.push({title: "Status", value: quote1.get("Apttus_Proposal__Approval_Stage__c") + "%", short:true});
             attachments.push({color: color, fields: fields});
         });
         return attachments;
