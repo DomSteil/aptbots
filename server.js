@@ -1432,7 +1432,12 @@ controller.hears(['Configure Products', 'New Configuration'], 'direct_message,di
                         "type": "button",
                     }
                 ]
-            },
+            }
+        ]
+    }
+)
+
+/*
              {
             "title": "",
             "color": "#62A70F",
@@ -1561,7 +1566,7 @@ controller.hears(['Configure Products', 'New Configuration'], 'direct_message,di
         }
     ]);
 }
-
+*/
 
     let askQuantity = (response, convo) => {
 
