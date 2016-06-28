@@ -1595,7 +1595,7 @@ controller.hears(['Configure Products', 'New Configuration'], 'direct_message,di
 
 
             {
-                title: 'Quote Q-00000502 has been Finalized and Generated.',
+                title: '',
                 callback_id: '123',
                 "color": "#62A70F",
                 attachment_type: 'default',
@@ -1604,12 +1604,14 @@ controller.hears(['Configure Products', 'New Configuration'], 'direct_message,di
                         "name":"SendForReview",
                         "text": "Send For Review",
                         "value": "Send for Review",
+                        "style": "primary",
                         "type": "button",
                     },
                     {
                         "name":"SendForeSignature",
                         "text": "Send for eSignature",
                         "value": "Send for eSignature",
+                        "style": "primary",
                         "type": "button",
                     }
                 ]
