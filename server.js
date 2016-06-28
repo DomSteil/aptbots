@@ -1417,12 +1417,6 @@ controller.hears(['Configure Products', 'New Configuration'], 'direct_message,di
                         "text": "Configure",
                         "value": "Configure",
                         "type": "button",
-                    },
-                    {
-                        "name":"Compare",
-                        "text": "Compare",
-                        "value": "Compare",
-                        "type": "button",
                     }
                 ]
             },
@@ -1465,12 +1459,6 @@ controller.hears(['Configure Products', 'New Configuration'], 'direct_message,di
                         "text": "Configure",
                         "value": "Configure",
                         "type": "button",
-                    },
-                    {
-                        "name":"Compare",
-                        "text": "Compare",
-                        "value": "Compare",
-                        "type": "button",
                     }
                 ]
             },
@@ -1512,12 +1500,6 @@ controller.hears(['Configure Products', 'New Configuration'], 'direct_message,di
                         "name":"Configure",
                         "text": "Configure",
                         "value": "Configure",
-                        "type": "button",
-                    },
-                    {
-                        "name":"Compare",
-                        "text": "Compare",
-                        "value": "Compare",
                         "type": "button",
                     }
                 ]
