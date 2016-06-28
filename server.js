@@ -1526,7 +1526,7 @@ controller.hears(['Configure Products', 'New Configuration'], 'direct_message,di
             }
         },
         {
-            pattern: "BL460c Gen8 Server Blade",
+            pattern: "BL460c Gen8 Server Blade ",
             callback: function(reply, convo) {
                 productName = response.text;
                 askQuantity(response, convo);
