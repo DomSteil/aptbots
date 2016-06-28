@@ -162,5 +162,5 @@ exports.formatCase = formatCase;
 exports.formatQuote = formatQuote;
 exports.formatFindQuotes = formatFindQuotes;
 exports.formatAgreement = formatAgreement;
-exports.formartISR = formatISR;
+exports.formatISR = formatISR;
 exports.formatNDA = formatNDA;
