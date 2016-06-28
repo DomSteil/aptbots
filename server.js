@@ -224,7 +224,7 @@ controller.hears(['Create quote', 'new quote', 'Quote', 'New proposal', 'Create 
 
     let askOpportunityName = (response, convo) => {
 
-        convo.ask("What's the Opportunity name?", (response, convo) => {
+        convo.ask("What's the Opportunity name?", (repsonse, convo) => {
             opportunityName = response.text;
             askPriceList(response, convo);
             convo.next();
@@ -255,7 +255,6 @@ controller.hears(['Create quote', 'new quote', 'Quote', 'New proposal', 'Create 
     bot.startConversation(message, askQuoteName);
 
 });
-
 
 controller.hears(['create agreement', 'new agreement', 'create contract', 'new contract', 'agreement'], 'direct_message,direct_mention,mention', (bot, message) => {
 
