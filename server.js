@@ -437,12 +437,6 @@ controller.hears(['Configure Products', 'New Configuration'], 'direct_message,di
                 convo.next();
             }
         },
-        {   
-            default: true,
-            callback: function(reply, convo) {
-                // do nothing
-            }
-        }
     ]);
 
 }
