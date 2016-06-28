@@ -257,7 +257,7 @@ controller.hears(['Create quote', 'new quote', 'Quote', 'New proposal', 'Create 
 });
 
 
-controller.hears(['Configure Products'], 'direct_message,direct_mention,mention', (bot, message) => {
+controller.hears(['Configure Products', 'new configuration'], 'direct_message,direct_mention,mention', (bot, message) => {
 
     let quoteId,
     let productName,
