@@ -1177,26 +1177,26 @@ controller.hears('Venture Industries', 'direct_message,direct_mention,mention', 
                 attachment_type: 'default',
                 actions: [                   
                     {
-                        "name":"Create Quote",
+                        "name":"createQuote",
                         "text": "Create Quote",
                         "value": "Create Quote",
                         "type": "button",
                     },
                     {
-                        "name":"Create Agreement",
+                        "name":"createAgreement",
                         "text": "Create Agreement",
                         "value": "Create Agreement",
                         "type": "button",
                     },
                     {
-                        "name":"Close Won",
+                        "name":"closeWon",
                         "text": "Close Won",
                         "value": "Close Won",
                         "style": "primary",
                         "type": "button",
                     },
                     {
-                        "name":"Close Lost",
+                        "name":"closeLost",
                         "text": "Close Lost",
                         "value": "Close Lost",
                         "style": "danger",
@@ -1414,9 +1414,9 @@ controller.hears(['Configure Products', 'New Configuration'], 'direct_message,di
                         "type": "button",
                     },
                     {
-                        "name":"Configure",
+                        "name":"configure",
                         "text": "Configure",
-                        "value": "Configure",
+                        "value": "WS460c Gen8 Graphics Server Blade",
                         "type": "button",
                     }
                 ]
@@ -1457,9 +1457,9 @@ controller.hears(['Configure Products', 'New Configuration'], 'direct_message,di
                         "type": "button",
                     },
                     {
-                        "name":"Configure",
+                        "name":"configure",
                         "text": "Configure",
-                        "value": "Configure",
+                        "value": "BL660c Gen8 Server Blade",
                         "type": "button",
                     }
                 ]
@@ -1500,9 +1500,9 @@ controller.hears(['Configure Products', 'New Configuration'], 'direct_message,di
                         "type": "button",
                     },
                     {
-                        "name":"Configure",
+                        "name":"configure",
                         "text": "Configure",
-                        "value": "Configure",
+                        "value": "BL460c Gen8 Server Blade",
                         "type": "button",
                     }
                 ]
