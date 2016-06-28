@@ -153,18 +153,6 @@ let formatNDA = nda => {
 
 };
 
-
-let formatCart = cart => {
-
-   let fields = [];
-   fields.push({title: "Product:", value: "Blade Servers" short: true});
-   fields.push({title: "Quantity:", value: "200", short: true});
-   fields.push({title: "Discount":, value: "15%", short: true});
-   return [{color: color, fields: fields}];
-};
-
-
-
 exports.formatAccounts = formatAccounts;
 exports.formatContacts = formatContacts;
 exports.formatContact = formatContact;
@@ -175,4 +163,3 @@ exports.formatFindQuotes = formatFindQuotes;
 exports.formatAgreement = formatAgreement;
 exports.formartISR = formatISR;
 exports.formatNDA = formatNDA;
-exports.formatCart = formatCart;
