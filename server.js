@@ -1561,7 +1561,7 @@ controller.hears(['Configure Products', 'New Configuration'], 'direct_message,di
 
         convo.ask("How many?", (response, convo) => {
             quantity = response.text;
-            askTerm(response, convo);
+            askDiscount(response, convo);
             convo.next();
         });
     };
