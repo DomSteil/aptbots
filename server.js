@@ -1381,6 +1381,7 @@ controller.hears(['Configure Products', 'New Configuration'], 'direct_message,di
             {
                 "title": "WS460c Gen8 Graphics Server Blade",
                 "color": "#62A70F",
+                callback_id: '123',
                 "fields": [
                     {
                         "title": "Product Code",
@@ -1397,7 +1398,6 @@ controller.hears(['Configure Products', 'New Configuration'], 'direct_message,di
             "author_icon": "https://api.slack.com/img/api/homepage_custom_integrations-2x.png",
             "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKSIhgmREbJQpZnqBsFVL_3PBgZieXqZLNTpEuwHxj5CTEgZL4"
         },
-
 
             {
                 title: '',
@@ -1522,9 +1522,8 @@ controller.hears(['Configure Products', 'New Configuration'], 'direct_message,di
                     }
                 ]
             }
-        ]
-    },
-    [
+        ]    
+    },[
         {
             pattern: "WS460c Gen8 Graphics Server Blade",
             callback: function(reply, convo) {
