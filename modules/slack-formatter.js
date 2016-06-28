@@ -161,6 +161,7 @@ let formatConfigure = cart => {
    fields.push({title: "Quantity:", value: "200", short: true});
    fields.push({title: "Discount":, value: "15%", short: true});
    return [{color: color, fields: fields}];
+   
 };
 
 
