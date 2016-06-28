@@ -1560,8 +1560,7 @@ controller.hears(['Configure Products', 'New Configuration'], 'direct_message,di
             discount = response.text;
             salesforce.createCart({productName: productName, quantity: quantity, discount: discount})
                 .then(cart => {
-                    bot.reply(message,
-                    text: "I configured and finalized the quote.", {
+                    bot.reply(message, {
         attachments:[
             {
             "title": "WS460c Gen8 Graphics Server Blade",
