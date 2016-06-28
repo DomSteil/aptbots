@@ -1394,7 +1394,7 @@ controller.hears(['Configure Products', 'New Configuration'], 'direct_message,di
                         "short": true
                     },
                 ],
-            "author_name": "d",
+            "author_name": "",
             "author_icon": "https://api.slack.com/img/api/homepage_custom_integrations-2x.png",
             "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKSIhgmREbJQpZnqBsFVL_3PBgZieXqZLNTpEuwHxj5CTEgZL4",
         },
