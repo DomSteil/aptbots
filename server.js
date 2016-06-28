@@ -415,7 +415,7 @@ controller.hears(['Configure Products'], 'direct_message,direct_mention,mention'
         {
             pattern: "WS460c Gen8 Graphics Server Blade",
             callback: function(reply, convo) {
-                type = response.text;
+                productName = response.text;
                 askQuantity(response, convo);
                 convo.next();
             }
@@ -423,7 +423,7 @@ controller.hears(['Configure Products'], 'direct_message,direct_mention,mention'
         {
             pattern: "BL660c Gen8 Server Blade",
             callback: function(reply, convo) {
-                type = response.text;
+                productName = response.text;
                 askQuantity(response, convo);
                 convo.next();
             }
@@ -431,7 +431,7 @@ controller.hears(['Configure Products'], 'direct_message,direct_mention,mention'
         {
             pattern: "BL460c Gen8 Server Blade",
             callback: function(reply, convo) {
-                type = response.text;
+                productName = response.text;
                 askQuantity(response, convo);
                 convo.next();
             }
@@ -457,7 +457,7 @@ controller.hears(['Configure Products'], 'direct_message,direct_mention,mention'
 
     let askTerm = (response, convo) => {
 
-        convo.ask("What is the term", (response, convo) => {
+        convo.ask("What is the term?", (response, convo) => {
             term = response.text;
 
     salesforce.createCart({quoteId: quoteId; productName: productName; quantity: quantity; term: term;})
