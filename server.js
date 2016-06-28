@@ -1601,17 +1601,27 @@ controller.hears(['Configure Products', 'New Configuration'], 'direct_message,di
                 attachment_type: 'default',
                 actions: [
                     {
-                        "name":"SendForReview",
-                        "text": "Send For Review",
-                        "value": "Send for Review",
-                        "style": "primary",
+                        "name":"preview",
+                        "text": "Preview",
+                        "value": "Preview",
                         "type": "button",
                     },
                     {
-                        "name":"SendForeSignature",
-                        "text": "Send for eSignature",
-                        "value": "Send for eSignature",
-                        "style": "primary",
+                        "name":"generate",
+                        "text": "Generate",
+                        "value": "Generate",
+                        "type": "button",
+                    },
+                    {
+                        "name":"present",
+                        "text": "Present",
+                        "value": "Present",
+                        "type": "button",
+                    },
+                    {
+                        "name":"configureProducts",
+                        "text": "Configure Products",
+                        "value": "Configure Products",
                         "type": "button",
                     }
                 ]
