@@ -1522,7 +1522,7 @@ controller.hears(['Configure Products', 'New Configuration'], 'direct_message,di
                     }
                 ]
             }
-        ]    
+        ]  
     },[
         {
             pattern: "WS460c Gen8 Graphics Server Blade",
@@ -1553,12 +1553,13 @@ controller.hears(['Configure Products', 'New Configuration'], 'direct_message,di
             callback: function(reply, convo) {
             }
         }
+
     ]);
 };
 
     let askQuantity = (response, convo) => {
 
-        convo.ask("How many?", (response, convo) => {
+        convo.ask("How many Blade Servers?", (response, convo) => {
             quantity = response.text;
             askDiscount(response, convo);
             convo.next();
@@ -1572,7 +1573,7 @@ controller.hears(['Configure Products', 'New Configuration'], 'direct_message,di
             salesforce.createCart({productName: productName, quantity: quantity, discount: discount})
                 .then(cart => {
                     bot.reply(message, {
-                        text: "I configured the products.",
+                        text: "I configured the products."
                     });
                     convo.next();
                 })

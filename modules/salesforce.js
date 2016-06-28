@@ -296,20 +296,13 @@ let createCase = newCase => {
     });
 };
 
-
-
-
-
-//*************************************APTTUS CPQ ACTIONS******************************************************//
-
-
-
 let createCart = cart => {
 
     return new Promise((resolve, reject) => {
         let c = nforce.createSobject('Slack_Requests__c');
         c.set('CPQ_Actions__c', 'Create Cart');
         c.set('Type__c', 'CPQ');
+        c.set('CartId', '1234');
 
 
             org.insert({sobject: c}, err => {
