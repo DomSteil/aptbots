@@ -263,10 +263,10 @@ controller.hears(['Configure Products', 'New Configuration'], 'direct_message,di
     let quantity,
     let term;
 
-    let askProduct = (response, convo) => {
+    let askProductName = (response, convo) => {
 
         convo.ask({
-        attachments: [
+        attachments:[
             {
                 "title": "WS460c Gen8 Graphics Server Blade",
                 "color": "#62A70F",
@@ -476,7 +476,7 @@ controller.hears(['Configure Products', 'New Configuration'], 'direct_message,di
     };
 
     bot.reply(message, "OK, I can help you with that!");
-    bot.startConversation(message, askProduct);
+    bot.startConversation(message, askProductName);
 
 });
 
