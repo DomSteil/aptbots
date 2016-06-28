@@ -1376,13 +1376,186 @@ controller.hears(['Configure Products', 'New Configuration'], 'direct_message,di
 
     let askProductName = (response, convo) => {
 
-        convo.ask("What's the Product name?", (response, convo) => {
-            productName = response.text;
-            askQuantity(response, convo);
-            convo.next();
-        });
+        convo.ask({
+        attachments:[
+            {
+                "title": "WS460c Gen8 Graphics Server Blade",
+                "color": "#62A70F",
+                "callback_id": '123',
+                "fields": [
+                    {
+                        "title": "Product Code",
+                        "value": "HW-BL003",
+                        "short": true
+                    },
+                    {
+                        "title": "List Price",
+                        "value": "$4,954.00",
+                        "short": true
+                    },
+                ],
+            "author_name": "d",
+            "author_icon": "https://api.slack.com/img/api/homepage_custom_integrations-2x.png",
+            "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKSIhgmREbJQpZnqBsFVL_3PBgZieXqZLNTpEuwHxj5CTEgZL4",
+        },
 
-    };
+            {
+                title: '',
+                callback_id: '123',
+                color: "#62A70F",
+                attachment_type: 'default',
+                actions: [
+                    {
+                        "name":"Add to Cart",
+                        "text": "Add to Cart",
+                        "value": "WS460c Gen8 Graphics Server Blade",
+                        "style": "primary",
+                        "type": "button",
+                    },
+                    {
+                        "name":"Configure",
+                        "text": "Configure",
+                        "value": "Configure",
+                        "type": "button",
+                    },
+                    {
+                        "name":"Compare",
+                        "text": "Compare",
+                        "value": "Compare",
+                        "type": "button",
+                    }
+                ]
+            },
+             {
+            "title": "BL660c Gen8 Server Blade",
+            "color": "#62A70F",
+            "fields": [
+                {
+                    "title": "Product Code",
+                    "value": "HW-BL004",
+                    "short": true
+                },
+                {
+                    "title": "List Price",
+                    "value": "$7,786.00",
+                    "short": true
+                },
+            ],
+            "author_name": "",
+            "author_icon": "https://api.slack.com/img/api/homepage_custom_integrations-2x.png",
+            "image_url": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRqk-5LjSdH2qr0Ne4ba0_6ILR5HjBRvws9Sit4yhOsyfGbYGC8GA",
+        },
+
+
+            {
+                title: '',
+                callback_id: '123',
+                "color": "#62A70F",
+                attachment_type: 'default',
+                actions: [
+                    {
+                        "name":"Add to Cart",
+                        "text": "Add to Cart",
+                        "value": "BL660c Gen8 Server Blade",
+                        "style": "primary",
+                        "type": "button",
+                    },
+                    {
+                        "name":"Configure",
+                        "text": "Configure",
+                        "value": "Configure",
+                        "type": "button",
+                    },
+                    {
+                        "name":"Compare",
+                        "text": "Compare",
+                        "value": "Compare",
+                        "type": "button",
+                    }
+                ]
+            },
+             {
+            "title": "BL460c Gen8 Server Blade",
+            "color": "#62A70F",
+            "fields": [
+                {
+                    "title": "Product Code",
+                    "value": "HW-BL002",
+                    "short": true
+                },
+                {
+                    "title": "List Price",
+                    "value": "$4,954.00",
+                    "short": true
+                },
+            ],
+            "author_name": "",
+            "author_icon": "https://api.slack.com/img/api/homepage_custom_integrations-2x.png",
+            "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRACAAbSbBjkLPKwl_VFKGlp9ETasobKRjsTkQaBFv820uJLbtV",
+        },
+
+
+            {
+                title: '',
+                callback_id: '123',
+                "color": "#62A70F",
+                attachment_type: 'default',
+                actions: [
+                    {
+                        "name":"Add to Cart",
+                        "text": "Add to Cart",
+                        "value": "BL460c Gen8 Server Blade",
+                        "style": "primary",
+                        "type": "button",
+                    },
+                    {
+                        "name":"Configure",
+                        "text": "Configure",
+                        "value": "Configure",
+                        "type": "button",
+                    },
+                    {
+                        "name":"Compare",
+                        "text": "Compare",
+                        "value": "Compare",
+                        "type": "button",
+                    }
+                ]
+            }
+        ]  
+    },[
+        {
+            pattern: "WS460c Gen8 Graphics Server Blade",
+            callback: function(reply, convo) {
+                productName = response.text;
+                askQuantity(response, convo);
+                convo.next();
+            }
+        },
+        {
+            pattern: "BL660c Gen8 Server Blade",
+            callback: function(reply, convo) {
+                productName = response.text;
+                askQuantity(response, convo);
+                convo.next();
+            }
+        },
+        {
+            pattern: "BL460c Gen8 Server Blade",
+            callback: function(reply, convo) {
+                productName = response.text;
+                askQuantity(response, convo);
+                convo.next();
+            }
+        },
+        {   
+            default: true,
+            callback: function(reply, convo) {
+            }
+        }
+
+    ]);
+};
 
     let askQuantity = (response, convo) => {
 
