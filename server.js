@@ -1563,12 +1563,13 @@ controller.hears(['Configure Products', 'New Configuration'], 'direct_message,di
                     bot.reply(message, {
         attachments:[
             {
-            "title": "WS460c Gen8 Graphics Server Blade",
+            "title": "Q-00000502",
+            "title_link": "https://na30.salesforce.com/a3V360000009ohT",
             "color": "#62A70F",
             "fields": [
                 {
-                    "title": "Product Code",
-                    "value": "HW-BL003",
+                    "title": "Product Name",
+                    "value": "WS460c Gen8 Graphics Server Blade",
                     "short": true
                 },
                 {
@@ -1594,7 +1595,7 @@ controller.hears(['Configure Products', 'New Configuration'], 'direct_message,di
 
 
             {
-                title: 'Your Quote has been Finalized and Generated!',
+                title: 'Quote Q-00000502 has been Finalized and Generated.',
                 callback_id: '123',
                 "color": "#62A70F",
                 attachment_type: 'default',
