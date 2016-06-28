@@ -304,9 +304,9 @@ let createCart = cart => {
         c.set('CPQ_Actions__c', 'Create Cart');
         c.set('Type__c', 'CPQ');
         c.set('QuoteId__c', 'Q-00000508');
-        c.set('Product_Name__c', addToCart.productName);
-        c.set('Quantity__c', addToCart.quantity);
-        c.set('Discount__c', addToCart.discount);
+        c.set('Product_Name__c', cart.productName);
+        c.set('Quantity__c', cart.quantity);
+        c.set('Discount__c', cart.discount);
 
                 org.insert({sobject: c}, err => {
             if (err) {
