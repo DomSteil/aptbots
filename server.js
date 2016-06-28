@@ -1513,6 +1513,7 @@ controller.hears(['Configure Products', 'New Configuration'], 'direct_message,di
             pattern: "WS460c Gen8 Graphics Server Blade",
             callback: function(reply, convo) {
                 productName = response.text;
+                convo.say('Cool, I added: ' + response.text);
                 askQuantity(response, convo);
                 convo.next();
             }
@@ -1521,14 +1522,16 @@ controller.hears(['Configure Products', 'New Configuration'], 'direct_message,di
             pattern: "BL660c Gen8 Server Blade",
             callback: function(reply, convo) {
                 productName = response.text;
+                convo.say('Cool, I added: ' + response.text);
                 askQuantity(response, convo);
                 convo.next();
             }
         },
         {
-            pattern: "BL460c Gen8 Server Blade ",
+            pattern: "BL460c Gen8 Server Blade",
             callback: function(reply, convo) {
                 productName = response.text;
+                convo.say('Cool, I added: ' + response.text);
                 askQuantity(response, convo);
                 convo.next();
             }
