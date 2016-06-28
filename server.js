@@ -1400,7 +1400,8 @@ controller.hears(['Configure Products', 'New Configuration'], 'direct_message,di
             salesforce.createCart({productName: productName, quantity: quantity, discount: discount})
                 .then(cart => {
                     bot.reply(message, {
-                        text: "I configured the products."
+                        text: "I configured the products.",
+                        attachments: formatter.formatConfigure(cart)
                     });
                     convo.next();
                 })
