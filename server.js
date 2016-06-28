@@ -1563,7 +1563,7 @@ controller.hears(['Configure Products', 'New Configuration'], 'direct_message,di
                     bot.reply(message, {
         attachments:[
             {
-            "title": "Q-00000516",
+            "title": "Q-00000520",
             "title_link": "https://na30.salesforce.com/a3V360000009ohT",
             "color": "#62A70F",
             "fields": [
