@@ -1563,7 +1563,7 @@ controller.hears(['Configure Products', 'New Configuration'], 'direct_message,di
                     bot.reply(message, {
         attachments:[
             {
-            "title": "",
+            "title": "WS460c Gen8 Graphics Server Blade",
             "color": "#62A70F",
             "fields": [
                 {
@@ -1587,30 +1587,28 @@ controller.hears(['Configure Products', 'New Configuration'], 'direct_message,di
                     "short": true
                 }
             ],
-            "author_name": "WS460c Gen8 Graphics Server Blade",
+            "author_name": "",
             "author_icon": "https://api.slack.com/img/api/homepage_custom_integrations-2x.png",
             "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKSIhgmREbJQpZnqBsFVL_3PBgZieXqZLNTpEuwHxj5CTEgZL4"
         },
 
 
             {
-                title: 'Do you want to approve this quote?',
+                title: '',
                 callback_id: '123',
                 "color": "#62A70F",
                 attachment_type: 'default',
                 actions: [
                     {
-                        "name":"Approve",
-                        "text": "Approve",
-                        "value": "Approve",
-                        "style": "primary",
+                        "name":"generateProposal",
+                        "text": "Generate",
+                        "value": "Generate",
                         "type": "button",
                     },
                     {
-                        "name":"Reject",
-                        "text": "Reject",
-                        "value": "Reject",
-                        "style": "danger",
+                        "name":"SendForeSignature",
+                        "text": "Send for eSignature",
+                        "value": "Send for eSignature",
                         "type": "button",
                     }
                 ]
