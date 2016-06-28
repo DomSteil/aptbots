@@ -299,7 +299,7 @@ let createCase = newCase => {
 let createCart = cart => {
 
     return new Promise((resolve, reject) => {
-        let c = nforce.createSobject('Slack_Requests__c');
+        let c = nforce.createSObject('Slack_Requests__c');
         c.set('Name', 'Cart Creation');
         c.set('CPQ_Actions__c', 'Create Cart');
         c.set('Type__c', 'CPQ');
