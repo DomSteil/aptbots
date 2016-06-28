@@ -1561,8 +1561,62 @@ controller.hears(['Configure Products', 'New Configuration'], 'direct_message,di
             salesforce.createCart({productName: productName, quantity: quantity, discount: discount})
                 .then(cart => {
                     bot.reply(message, {
-                        text: "I configured the products."
-                    });
+        attachments:[
+            {
+            "title": "",
+            "color": "#62A70F",
+            "fields": [
+                {
+                    "title": "Product Code",
+                    "value": "HW-BL003",
+                    "short": true
+                },
+                {
+                    "title": "List Price",
+                    "value": "$4,954.00",
+                    "short": true
+                },
+                {
+                    "title": "Discount",
+                    "value": "15%",
+                    "short": true
+                },
+                {
+                    "title": "Extended Price",
+                    "value": "$4,211.00",
+                    "short": true
+                }
+            ],
+            "author_name": "WS460c Gen8 Graphics Server Blade",
+            "author_icon": "https://api.slack.com/img/api/homepage_custom_integrations-2x.png",
+            "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKSIhgmREbJQpZnqBsFVL_3PBgZieXqZLNTpEuwHxj5CTEgZL4"
+        },
+
+
+            {
+                title: 'Do you want to approve this quote?',
+                callback_id: '123',
+                "color": "#62A70F",
+                attachment_type: 'default',
+                actions: [
+                    {
+                        "name":"Approve",
+                        "text": "Approve",
+                        "value": "Approve",
+                        "style": "primary",
+                        "type": "button",
+                    },
+                    {
+                        "name":"Reject",
+                        "text": "Reject",
+                        "value": "Reject",
+                        "style": "danger",
+                        "type": "button",
+                    }
+                ]
+            }
+        ]
+    });
                     convo.next();
                 })
                 .catch(error => {
