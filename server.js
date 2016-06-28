@@ -269,21 +269,21 @@ controller.hears(['Configure Products', 'new configuration'], 'direct_message,di
         convo.ask({
         attachments: [
             {
-            "title": "WS460c Gen8 Graphics Server Blade",
-            "color": "#62A70F",
-            "fields": [
-                {
-                    "title": "Product Code",
-                    "value": "HW-BL003",
-                    "short": true
-                },
-                {
-                    "title": "List Price",
-                    "value": "$4,954.00",
-                    "short": true
-                },
-            ],
-
+                "title": "WS460c Gen8 Graphics Server Blade",
+                "color": "#62A70F",
+                "fields": [
+                    {
+                        "title": "Product Code",
+                        "value": "HW-BL003",
+                        "short": true
+                    },
+                    {
+                        "title": "List Price",
+                        "value": "$4,954.00",
+                        "short": true
+                    },
+                ],
+            "author_name": "",
             "author_icon": "https://api.slack.com/img/api/homepage_custom_integrations-2x.png",
             "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKSIhgmREbJQpZnqBsFVL_3PBgZieXqZLNTpEuwHxj5CTEgZL4"
         },
@@ -331,6 +331,7 @@ controller.hears(['Configure Products', 'new configuration'], 'direct_message,di
                     "short": true
                 },
             ],
+            "author_name": "",
             "author_icon": "https://api.slack.com/img/api/homepage_custom_integrations-2x.png",
             "image_url": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRqk-5LjSdH2qr0Ne4ba0_6ILR5HjBRvws9Sit4yhOsyfGbYGC8GA"
         },
@@ -378,6 +379,7 @@ controller.hears(['Configure Products', 'new configuration'], 'direct_message,di
                     "short": true
                 },
             ],
+            "author_name": "",
             "author_icon": "https://api.slack.com/img/api/homepage_custom_integrations-2x.png",
             "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRACAAbSbBjkLPKwl_VFKGlp9ETasobKRjsTkQaBFv820uJLbtV"
         },
