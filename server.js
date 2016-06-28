@@ -1381,7 +1381,7 @@ controller.hears(['Configure Products', 'New Configuration'], 'direct_message,di
             {
                 "title": "WS460c Gen8 Graphics Server Blade",
                 "color": "#62A70F",
-                callback_id: '123',
+                "callback_id": '123',
                 "fields": [
                     {
                         "title": "Product Code",
@@ -1394,15 +1394,15 @@ controller.hears(['Configure Products', 'New Configuration'], 'direct_message,di
                         "short": true
                     },
                 ],
-            "author_name": "",
+            "author_name": "d",
             "author_icon": "https://api.slack.com/img/api/homepage_custom_integrations-2x.png",
-            "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKSIhgmREbJQpZnqBsFVL_3PBgZieXqZLNTpEuwHxj5CTEgZL4"
+            "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKSIhgmREbJQpZnqBsFVL_3PBgZieXqZLNTpEuwHxj5CTEgZL4",
         },
 
             {
                 title: '',
                 callback_id: '123',
-                "color": "#62A70F",
+                color: "#62A70F",
                 attachment_type: 'default',
                 actions: [
                     {
@@ -1443,7 +1443,7 @@ controller.hears(['Configure Products', 'New Configuration'], 'direct_message,di
             ],
             "author_name": "",
             "author_icon": "https://api.slack.com/img/api/homepage_custom_integrations-2x.png",
-            "image_url": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRqk-5LjSdH2qr0Ne4ba0_6ILR5HjBRvws9Sit4yhOsyfGbYGC8GA"
+            "image_url": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRqk-5LjSdH2qr0Ne4ba0_6ILR5HjBRvws9Sit4yhOsyfGbYGC8GA",
         },
 
 
@@ -1491,7 +1491,7 @@ controller.hears(['Configure Products', 'New Configuration'], 'direct_message,di
             ],
             "author_name": "",
             "author_icon": "https://api.slack.com/img/api/homepage_custom_integrations-2x.png",
-            "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRACAAbSbBjkLPKwl_VFKGlp9ETasobKRjsTkQaBFv820uJLbtV"
+            "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRACAAbSbBjkLPKwl_VFKGlp9ETasobKRjsTkQaBFv820uJLbtV",
         },
 
 
@@ -1564,7 +1564,7 @@ controller.hears(['Configure Products', 'New Configuration'], 'direct_message,di
             askDiscount(response, convo);
             convo.next();
         });
-    };
+    }
 
     let askDiscount = (response, convo) => {
 
