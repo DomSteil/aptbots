@@ -1594,15 +1594,15 @@ controller.hears(['Configure Products', 'New Configuration'], 'direct_message,di
 
 
             {
-                title: '',
+                title: 'Your Quote has been Finalized and Generated!',
                 callback_id: '123',
                 "color": "#62A70F",
                 attachment_type: 'default',
                 actions: [
                     {
-                        "name":"generateProposal",
-                        "text": "Generate",
-                        "value": "Generate",
+                        "name":"SendForReview",
+                        "text": "Send For Review",
+                        "value": "Send for Review",
                         "type": "button",
                     },
                     {
