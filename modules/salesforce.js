@@ -198,7 +198,7 @@ let createQuote = quote => {
     return new Promise((resolve, reject) => {
         let c = nforce.createSObject('Apttus_Proposal__Proposal__c');
         c.set('Apttus_Proposal__Proposal_Name__c', quote.name);
-        c.set('Apttus_Proposal__Opportunity__c', '00636000007G0BJ');
+        c.set('Apttus_Proposal__Opportunity__c', '00636000008xUJv');
         c.set('Apttus_QPConfig__PriceListId__c', 'a1f36000000dL7X');
 
         org.insert({sobject: c}, err => {
