@@ -257,9 +257,8 @@ controller.hears(['Create quote', 'new quote', 'Quote', 'New proposal', 'Create 
 });
 
 
-controller.hears(['Configure Products', 'new configuration'], 'direct_message,direct_mention,mention', (bot, message) => {
+controller.hears(['Configure Products', 'New Configuration'], 'direct_message,direct_mention,mention', (bot, message) => {
 
-    let quoteId,
     let productName,
     let quantity,
     let term;
@@ -462,7 +461,7 @@ controller.hears(['Configure Products', 'new configuration'], 'direct_message,di
         convo.ask("What is the term?", (response, convo) => {
             term = response.text;
 
-    salesforce.createCart({quoteId: quoteId; productName: productName; quantity: quantity; term: term;})
+    salesforce.createCart({productName: productName; quantity: quantity; term: term})
                 .then(cart => {
                     bot.reply(message, {
                         text: "I configured the products.",
