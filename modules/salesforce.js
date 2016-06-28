@@ -303,7 +303,7 @@ let createCart = cart => {
         c.set('Name', 'Cart Creation');
         c.set('CPQ_Actions__c', 'Create Cart');
         c.set('Type__c', 'CPQ');
-        c.set('QuoteId__c', 'Q-00000495');
+        c.set('QuoteId__c', 'Q-00000502');
 
                 org.insert({sobject: c}, err => {
             if (err) {
