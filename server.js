@@ -1601,27 +1601,24 @@ controller.hears(['Configure Products', 'New Configuration'], 'direct_message,di
                 attachment_type: 'default',
                 actions: [
                     {
-                        "name":"preview",
-                        "text": "Preview",
-                        "value": "Preview",
-                        "type": "button",
-                    },
-                    {
-                        "name":"generate",
+                        "name":"Generate",
                         "text": "Generate",
                         "value": "Generate",
+                        "style": "primary",
                         "type": "button",
                     },
                     {
-                        "name":"present",
+                        "name":"Present",
                         "text": "Present",
                         "value": "Present",
+                        "style": "primary",
                         "type": "button",
                     },
                     {
-                        "name":"configureProducts",
-                        "text": "Configure Products",
-                        "value": "Configure Products",
+                        "name":"SendForeSignature",
+                        "text": "Send for eSignature",
+                        "value": "Send for eSignature",
+                        "style": "primary",
                         "type": "button",
                     }
                 ]
