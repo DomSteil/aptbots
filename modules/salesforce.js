@@ -303,7 +303,6 @@ let createCart = cart => {
         c.set('Name', 'Cart Creation');
         c.set('CPQ_Actions__c', 'Create Cart');
         c.set('Type__c', 'CPQ');
-        c.set('QuoteId__c', 'Q-00000508');
         c.set('Product_Name__c', cart.productName);
         c.set('Quantity__c', cart.quantity);
         c.set('Discount__c', cart.discount);
