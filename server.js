@@ -1380,6 +1380,7 @@ controller.hears(['Configure Products', 'New Configuration'], 'direct_message,di
         attachments:[
             {
                 "title": "WS460c Gen8 Graphics Server Blade",
+                "title_link": "https://na30.salesforce.com/01t36000001hmdk",
                 "color": "#62A70F",
                 "callback_id": '123',
                 "fields": [
@@ -1406,7 +1407,7 @@ controller.hears(['Configure Products', 'New Configuration'], 'direct_message,di
                 attachment_type: 'default',
                 actions: [
                     {
-                        "name":"Add to Cart",
+                        "name":"addToCart",
                         "text": "Add to Cart",
                         "value": "WS460c Gen8 Graphics Server Blade",
                         "style": "primary",
@@ -1422,6 +1423,7 @@ controller.hears(['Configure Products', 'New Configuration'], 'direct_message,di
             },
              {
             "title": "BL660c Gen8 Server Blade",
+            "title_link": "https://na30.salesforce.com/01t36000001hmcK",
             "color": "#62A70F",
             "fields": [
                 {
@@ -1448,7 +1450,7 @@ controller.hears(['Configure Products', 'New Configuration'], 'direct_message,di
                 attachment_type: 'default',
                 actions: [
                     {
-                        "name":"Add to Cart",
+                        "name":"addToCart",
                         "text": "Add to Cart",
                         "value": "BL660c Gen8 Server Blade",
                         "style": "primary",
@@ -1464,6 +1466,7 @@ controller.hears(['Configure Products', 'New Configuration'], 'direct_message,di
             },
              {
             "title": "BL460c Gen8 Server Blade",
+            "title_link": "https://na30.salesforce.com/01t36000001hmc9",
             "color": "#62A70F",
             "fields": [
                 {
@@ -1490,7 +1493,7 @@ controller.hears(['Configure Products', 'New Configuration'], 'direct_message,di
                 attachment_type: 'default',
                 actions: [
                     {
-                        "name":"Add to Cart",
+                        "name":"addToCart",
                         "text": "Add to Cart",
                         "value": "BL460c Gen8 Server Blade",
                         "style": "primary",
