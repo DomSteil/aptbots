@@ -175,4 +175,4 @@ exports.formatFindQuotes = formatFindQuotes;
 exports.formatAgreement = formatAgreement;
 exports.formartISR = formatISR;
 exports.formatNDA = formatNDA;
-exports.formarCart = formatCart;
+exports.formatCart = formatCart;
