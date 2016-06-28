@@ -1371,8 +1371,8 @@ controller.hears('Future Contract Hypercard', 'direct_message,direct_mention,men
 controller.hears(['Configure Products', 'New Configuration'], 'direct_message,direct_mention,mention', (bot, message) => {
 
     let productName,
-    let quantity,
-    let discount;
+        quantity,
+        discount;
 
     let askProductName = (response, convo) => {
 
