@@ -224,7 +224,7 @@ controller.hears(['Create quote', 'new quote', 'Quote', 'New proposal', 'Create 
 
     let askOpportunityName = (response, convo) => {
 
-        convo.ask("What's the Opportunity name?", (repsonse, convo) => {
+        convo.ask("What's the Opportunity name?", (response, convo) => {
             opportunityName = response.text;
             askPriceList(response, convo);
             convo.next();
@@ -238,7 +238,7 @@ controller.hears(['Create quote', 'new quote', 'Quote', 'New proposal', 'Create 
             salesforce.createQuote({name: name, opportunityName: opportunityName, priceList: priceList})
                 .then(quote => {
                     bot.reply(message, {
-                        text: "I created the quote, would you like to Configure Products?",
+                        text: "I created the quote.",
                         attachments: formatter.formatQuote(quote)
                     });
                     convo.next();
@@ -255,6 +255,231 @@ controller.hears(['Create quote', 'new quote', 'Quote', 'New proposal', 'Create 
     bot.startConversation(message, askQuoteName);
 
 });
+
+
+controller.hears(['Configure Products'], 'direct_message,direct_mention,mention', (bot, message) => {
+
+    let quoteId,
+    let productName,
+    let quantity,
+    let term;
+
+    let askProduct = (response, convo) => {
+
+        convo.ask({
+        attachments: [
+            {
+            "title": "WS460c Gen8 Graphics Server Blade",
+            "color": "#62A70F",
+            "fields": [
+                {
+                    "title": "Product Code",
+                    "value": "HW-BL003",
+                    "short": true
+                },
+                {
+                    "title": "List Price",
+                    "value": "$4,954.00",
+                    "short": true
+                },
+            ],
+
+            "author_icon": "https://api.slack.com/img/api/homepage_custom_integrations-2x.png",
+            "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKSIhgmREbJQpZnqBsFVL_3PBgZieXqZLNTpEuwHxj5CTEgZL4"
+        },
+
+
+            {
+                title: '',
+                callback_id: '123',
+                "color": "#62A70F",
+                attachment_type: 'default',
+                actions: [
+                    {
+                        "name":"Add to Cart",
+                        "text": "Add to Cart",
+                        "value": "WS460c Gen8 Graphics Server Blade",
+                        "style": "primary",
+                        "type": "button",
+                    },
+                    {
+                        "name":"Configure",
+                        "text": "Configure",
+                        "value": "Configure",
+                        "type": "button",
+                    },
+                    {
+                        "name":"Compare",
+                        "text": "Compare",
+                        "value": "Compare",
+                        "type": "button",
+                    }
+                ]
+            },
+             {
+            "title": "BL660c Gen8 Server Blade",
+            "color": "#62A70F",
+            "fields": [
+                {
+                    "title": "Product Code",
+                    "value": "HW-BL004",
+                    "short": true
+                },
+                {
+                    "title": "List Price",
+                    "value": "$7,786.00",
+                    "short": true
+                },
+            ],
+            "author_icon": "https://api.slack.com/img/api/homepage_custom_integrations-2x.png",
+            "image_url": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRqk-5LjSdH2qr0Ne4ba0_6ILR5HjBRvws9Sit4yhOsyfGbYGC8GA"
+        },
+
+
+            {
+                title: '',
+                callback_id: '123',
+                "color": "#62A70F",
+                attachment_type: 'default',
+                actions: [
+                    {
+                        "name":"Add to Cart",
+                        "text": "Add to Cart",
+                        "value": "BL660c Gen8 Server Blade",
+                        "style": "primary",
+                        "type": "button",
+                    },
+                    {
+                        "name":"Configure",
+                        "text": "Configure",
+                        "value": "Configure",
+                        "type": "button",
+                    },
+                    {
+                        "name":"Compare",
+                        "text": "Compare",
+                        "value": "Compare",
+                        "type": "button",
+                    }
+                ]
+            },
+             {
+            "title": "BL460c Gen8 Server Blade",
+            "color": "#62A70F",
+            "fields": [
+                {
+                    "title": "Product Code",
+                    "value": "HW-BL002",
+                    "short": true
+                },
+                {
+                    "title": "List Price",
+                    "value": "$4,954.00",
+                    "short": true
+                },
+            ],
+            "author_icon": "https://api.slack.com/img/api/homepage_custom_integrations-2x.png",
+            "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRACAAbSbBjkLPKwl_VFKGlp9ETasobKRjsTkQaBFv820uJLbtV"
+        },
+
+
+            {
+                title: '',
+                callback_id: '123',
+                "color": "#62A70F",
+                attachment_type: 'default',
+                actions: [
+                    {
+                        "name":"Add to Cart",
+                        "text": "Add to Cart",
+                        "value": "BL460c Gen8 Server Blade",
+                        "style": "primary",
+                        "type": "button",
+                    },
+                    {
+                        "name":"Configure",
+                        "text": "Configure",
+                        "value": "Configure",
+                        "type": "button",
+                    },
+                    {
+                        "name":"Compare",
+                        "text": "Compare",
+                        "value": "Compare",
+                        "type": "button",
+                    }
+                ]
+            }
+        ]
+    },[
+        {
+            pattern: "WS460c Gen8 Graphics Server Blade",
+            callback: function(reply, convo) {
+                type = response.text;
+                askQuantity(response, convo);
+                convo.next();
+            }
+        },
+        {
+            pattern: "BL660c Gen8 Server Blade",
+            callback: function(reply, convo) {
+                type = response.text;
+                askQuantity(response, convo);
+                convo.next();
+            }
+        },
+        {
+            pattern: "BL460c Gen8 Server Blade",
+            callback: function(reply, convo) {
+                type = response.text;
+                askQuantity(response, convo);
+                convo.next();
+            }
+        },
+        {   
+            default: true,
+            callback: function(reply, convo) {
+                // do nothing
+            }
+        }
+    ]);
+
+}
+
+    let askQuantity = (response, convo) => {
+
+        convo.ask("How many?", (response, convo) => {
+            quantity = response.text;
+            askTerm(response, convo);
+            convo.next();
+        });
+    }
+
+    let askTerm = (response, convo) => {
+
+        convo.ask("What is the term", (response, convo) => {
+            term = response.text;
+
+    salesforce.createCart({quoteId: quoteId; productName: productName; quantity: quantity; term: term;})
+                .then(cart => {
+                    bot.reply(message, {
+                        text: "I configured the products.",
+                    });
+                    convo.next();
+                })
+                .catch(error => {
+                    bot.reply(message, error);
+                    convo.next();
+                });
+        });
+
+    };
+
+    bot.reply(message, "OK, I can help you with that!");
+    bot.startConversation(message, askProduct);
+
+});
+
 
 controller.hears(['create agreement', 'new agreement', 'create contract', 'new contract', 'agreement'], 'direct_message,direct_mention,mention', (bot, message) => {
 
