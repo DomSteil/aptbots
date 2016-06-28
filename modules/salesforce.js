@@ -305,69 +305,12 @@ let createCart = cart => {
         c.set('Type__c', 'CPQ');
         c.set('QuoteId__c', 'Q-00000495');
 
-            org.insert({sobject: c}, err => {
-        if (err) {
-            console.error(err);
-            reject("An error occured while creating the Cart");
-        } else {
-            resolve(c);
-            }
-        });
-    });
-};
-
-let searchProducts = searchProducts => {
-
-    return new Promise((resolve, reject) => {
-        let c = nforce.createSobject('Slack_Requests__c');
-        c.set('CPQ_Actions__c', 'Search Products');
-        c.set('Type__c', 'CPQ');
-
-
-            org.insert({sobject: c}, err => {
-        if (err) {
-            console.error(err);
-            reject("An error occured while searching in the Cart");
-        } else {
-            resolve(c);
-            }
-        });
-    });
-};
-
-let addToCart = addToCart => {
-
-    return new Promise((resolve, reject) => {
-        let c = nforce.createSobject('Slack_Requests__c');
-        c.set('CPQ_Actions__c', 'Add to Cart');
-        c.set('Type__c', 'CPQ');
-
-
-            org.insert({sobject: c}, err => {
-        if (err) {
-            console.error(err);
-            reject("An error occured while adding a product to the Cart");
-        } else {
-            resolve(c);
-            }
-        });
-    });
-};
-
-let finalizeCart = fianlizeCart => {
-
-    return new Promise((resolve, reject) => {
-        let c = nforce.createSobject('Slack_Requests__c');
-        c.set('CPQ_Actions__c', 'Finalize');
-        c.set('Type__c', 'CPQ')
-
-
-            org.insert({sobject: c}, err => {
-        if (err) {
-            console.error(err);
-            reject("An error occured while finalizing the Cart");
-        } else {
-            resolve(c);
+                org.insert({sobject: c}, err => {
+            if (err) {
+                console.error(err);
+                reject("An error occured while creating the Cart");
+            } else {
+                resolve(c);
             }
         });
     });
@@ -393,7 +336,5 @@ exports.createCase = createCase;
 exports.createISR = createISR;
 exports.createNDA = createNDA;
 exports.createCart = createCart;
-exports.searchProducts = searchProducts;
-exports.addToCart = addToCart;
-exports.finalizeCart = finalizeCart;
+
 
