@@ -316,6 +316,29 @@ let createCart = cart => {
     });
 };
 
+let addToCart = addToCart => {
+
+    return new Promise((resolve, reject) => {
+        let c = nforce.createSObject('Slack_Requests__c');
+        c.set('CPQ_Actions__c', 'Add to Cart');
+        c.set('Type__c', 'CPQ');
+        c.set('Product_Name__c', addToCart.productName);
+        c.set('Quantity__c', addToCart.quantity);
+        c.set('Discount__c', addToCart.discount);
+
+
+
+            org.insert({sobject: c}, err => {
+        if (err) {
+            console.error(err);
+            reject("An error occured while adding a product to the Cart");
+        } else {
+            resolve(c);
+            }
+        });
+    });
+};
+
 
 login();
 
@@ -336,5 +359,6 @@ exports.createCase = createCase;
 exports.createISR = createISR;
 exports.createNDA = createNDA;
 exports.createCart = createCart;
+exports.addToCart = addToCart;
 
 
