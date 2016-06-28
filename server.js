@@ -1368,3 +1368,51 @@ controller.hears('Future Contract Hypercard', 'direct_message,direct_mention,men
     });    
 });
 
+controller.hears(['Configure Products', 'New Configuration'], 'direct_message,direct_mention,mention', (bot, message) => {
+
+    let productName,
+    let quantity,
+    let discount;
+
+    let askProductName = (response, convo) => {
+
+        convo.ask("What's the Product name?", (response, convo) => {
+            productName = response.text;
+            askQuantity(response, convo);
+            convo.next();
+        });
+
+    };
+
+        let askQuantity = (response, convo) => {
+
+        convo.ask("How many Blade Servers?", (response, convo) => {
+            quantity = response.text;
+            askDiscount(response, convo);
+            convo.next();
+        });
+    }
+
+    let askDiscount = (response, convo) => {
+
+        convo.ask("What is the discount?", (response, convo) => {
+            discount = response.text;
+            salesforce.createCart({productName: productName, quantity: quantity, discount: discount})
+                .then(cart => {
+                    bot.reply(message, {
+                        text: "I configured the products."
+                    });
+                    convo.next();
+                })
+                .catch(error => {
+                    bot.reply(message, error);
+                    convo.next();
+                });
+        });
+
+    };
+
+    bot.reply(message, "OK, I can help you with that!");
+    bot.startConversation(message, askProductName);
+
+});
