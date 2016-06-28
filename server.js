@@ -1604,21 +1604,18 @@ controller.hears(['Configure Products', 'New Configuration'], 'direct_message,di
                         "name":"Generate",
                         "text": "Generate",
                         "value": "Generate",
-                        "style": "primary",
                         "type": "button",
                     },
                     {
                         "name":"Present",
                         "text": "Present",
                         "value": "Present",
-                        "style": "primary",
                         "type": "button",
                     },
                     {
                         "name":"SendForeSignature",
                         "text": "Send for eSignature",
                         "value": "Send for eSignature",
-                        "style": "primary",
                         "type": "button",
                     }
                 ]
