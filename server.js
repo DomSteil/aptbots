@@ -1595,7 +1595,7 @@ controller.hears(['Configure Products', 'New Configuration'], 'direct_message,di
 
 
             {
-                title: '',
+                title: 'Quote Actions',
                 callback_id: '123',
                 "color": "#62A70F",
                 attachment_type: 'default',
