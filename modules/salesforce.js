@@ -300,10 +300,10 @@ let createCart = cart => {
 
     return new Promise((resolve, reject) => {
         let c = nforce.createSobject('Slack_Requests__c');
+        c.set('Name', 'Cart Creation');
         c.set('CPQ_Actions__c', 'Create Cart');
         c.set('Type__c', 'CPQ');
         c.set('QuoteId__c', 'Q-00000495');
-
 
             org.insert({sobject: c}, err => {
         if (err) {
