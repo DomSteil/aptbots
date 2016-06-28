@@ -444,8 +444,6 @@ controller.hears(['Configure Products', 'New Configuration'], 'direct_message,di
         }
     ]);
 
-}
-
     let askQuantity = (response, convo) => {
 
         convo.ask("How many?", (response, convo) => {
