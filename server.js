@@ -1372,7 +1372,7 @@ controller.hears('Future Contract Hypercard', 'direct_message,direct_mention,men
 
 //************************************* CPQ ACTIONS AND BOTS **********************************************
 
-
+/*
 
 
 controller.hears(['Configure Products', 'New Configuration'], 'direct_message,direct_mention,mention', (bot, message) => {
@@ -1434,9 +1434,7 @@ controller.hears(['Configure Products', 'New Configuration'], 'direct_message,di
                 ]
             }
         ]
-    }
-
-/*
+    },
              {
             "title": "",
             "color": "#62A70F",
@@ -1565,7 +1563,6 @@ controller.hears(['Configure Products', 'New Configuration'], 'direct_message,di
         }
     ]);
 }
-*/
 
     let askQuantity = (response, convo) => {
 
