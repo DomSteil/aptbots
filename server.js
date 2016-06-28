@@ -437,6 +437,11 @@ controller.hears(['Configure Products', 'New Configuration'], 'direct_message,di
                 convo.next();
             }
         },
+        {   
+            default: true,
+            callback: function(reply, convo) {
+            }
+        }
     ]);
 
 }
@@ -455,7 +460,7 @@ controller.hears(['Configure Products', 'New Configuration'], 'direct_message,di
         convo.ask("What is the term?", (response, convo) => {
             term = response.text;
 
-    salesforce.createCart({productName: productName; quantity: quantity; term: term})
+    salesforce.createCart({productName: productName, quantity: quantity, term: term})
                 .then(cart => {
                     bot.reply(message, {
                         text: "I configured the products.",
