@@ -1513,7 +1513,7 @@ controller.hears(['Configure Products', 'New Configuration'], 'direct_message,di
             pattern: "WS460c Gen8 Graphics Server Blade",
             callback: function(response, convo) {
                 productName = response.text;
-                convo.say('Cool, I added: ' + response.text);
+                convo.say('Ok, I added: ' + response.text);
                 askQuantity(response, convo);
                 convo.next();
             }
@@ -1522,7 +1522,7 @@ controller.hears(['Configure Products', 'New Configuration'], 'direct_message,di
             pattern: "BL660c Gen8 Server Blade",
             callback: function(response, convo) {
                 productName = response.text;
-                convo.say('Cool, I added: ' + response.text);
+                convo.say('Ok, I added: ' + response.text);
                 askQuantity(response, convo);
                 convo.next();
             }
@@ -1531,7 +1531,7 @@ controller.hears(['Configure Products', 'New Configuration'], 'direct_message,di
             pattern: "BL460c Gen8 Server Blade",
             callback: function(response, convo) {
                 productName = response.text;
-                convo.say('Cool, I added: ' + response.text);
+                convo.say('Ok, I added: ' + response.text);
                 askQuantity(response, convo);
                 convo.next();
             }
@@ -1584,7 +1584,7 @@ controller.hears(['Configure Products', 'New Configuration'], 'direct_message,di
                 },
                 {
                     "title": "Extended Price",
-                    "value": "$4,211.00",
+                    "value": "$842,200.00",
                     "short": true
                 }
             ],
