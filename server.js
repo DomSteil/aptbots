@@ -1367,4 +1367,3 @@ controller.hears('Future Contract Hypercard', 'direct_message,direct_mention,men
         ]
     });    
 });
-
