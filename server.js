@@ -183,7 +183,7 @@ controller.hears(['create contact', 'new contact'], 'direct_message,direct_menti
 
     let askEmail = (response, convo) => {
 
-        convo.ask("What's the email", (repsonse, convo) => {
+        convo.ask("What's the email", (response, convo) => {
             email = response.text;
             salesforce.createContact({firstName: firstName, lastName: lastName, title: title, phone: phone, email: email})
                 .then(contact => {
