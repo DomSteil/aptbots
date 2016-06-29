@@ -154,6 +154,19 @@ let formatNDA = nda => {
 };
 
 
+let formatTask = task => {
+
+    let fields = [];
+    fields.push({title: "Who:", value: task.who("Who"), short: true});
+    fields.push({title: "Type:", value: task.get("Type"), short: true});
+    fields.push({title: "Status:", value: task.get("Status"), short: true});
+    fields.push({title: "Call Duration:", value: task.get("CallDurationInSeconds"), short: true});
+    fields.push({title: "Location:", value: task.get("Location__C"), short: true});
+    fields.push({title: "Product:", value: task.get("Product__c"), short: true});
+    return [{color: color, fields: fields}];
+
+};
+
 exports.formatAccounts = formatAccounts;
 exports.formatContacts = formatContacts;
 exports.formatContact = formatContact;
@@ -164,3 +177,4 @@ exports.formatFindQuotes = formatFindQuotes;
 exports.formatAgreement = formatAgreement;
 exports.formatISR = formatISR;
 exports.formatNDA = formatNDA;
+exports.formatTask = formatTask;

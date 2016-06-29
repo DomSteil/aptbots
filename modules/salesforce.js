@@ -333,7 +333,7 @@ let createTask = task => {
                 org.insert({sobject: c}, err => {
             if (err) {
                 console.error(err);
-                reject("An error occured while creating the Cart");
+                reject("An error occured while creating the Task");
             } else {
                 resolve(c);
             }
