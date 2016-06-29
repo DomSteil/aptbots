@@ -286,7 +286,7 @@ controller.hears(['Create Task', 'New Task', 'Log Task'], 'direct_message,direct
     };
 
     bot.reply(message, "OK, I can help you with that!");
-    bot.startConversation(message, askFirstName);
+    bot.startConversation(message, askWho);
 
 });
 
