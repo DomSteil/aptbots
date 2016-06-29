@@ -272,8 +272,7 @@ controller.hears(['Create Task', 'New Task', 'Log Task'], 'direct_message,direct
             salesforce.createTask({who: who, type: type, status: status, callDuration: callDuration, location: location, product: product})
                 .then(task => {
                     bot.reply(message, {
-                        text: "I created the task:",
-                        attachments: formatter.formatTask(task)
+                        text: "I created the task:"
                     });
                     convo.next();
                 })
