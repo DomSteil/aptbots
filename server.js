@@ -267,7 +267,7 @@ controller.hears(['Create Task', 'New Task', 'Log Task'], 'direct_message,direct
 
      let askproduct = (response, convo) => {}
 
-        convo.ask("What's the product they are interested in?", (repsonse, convo) => {
+        convo.ask("What's the product they are interested in?", (response, convo) => {
             product = response.text;
             salesforce.createTask({who: who, type: type, status: status, callDuration: callDuration, location: location, product: product})
                 .then(task => {
