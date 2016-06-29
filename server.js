@@ -215,7 +215,7 @@ controller.hears(['Create Task', 'New Task', 'Log Task'], 'direct_message,direct
         location,
         product;
 
-    let askwho = (response, convo) => {
+    let askWho = (response, convo) => {
 
         convo.ask("Who is this assigned to?", (response, convo) => {
             who = response.text;
