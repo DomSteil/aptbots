@@ -319,6 +319,28 @@ let createCart = cart => {
 };
 
 
+let createTask = task => {
+
+    return new Promise((resolve, reject) => {
+        let c = nforce.createSObject('Activity');
+        c.set('Who', task.who);
+        c.set('Type', task.type);
+        c.set('Status', task.status);
+        c.set('CallDurationInSeconds', task.callDuration);
+        c.set('Location__c', task.location);
+        c.set('Product__c', task.product);
+
+                org.insert({sobject: c}, err => {
+            if (err) {
+                console.error(err);
+                reject("An error occured while creating the Cart");
+            } else {
+                resolve(c);
+            }
+        });
+    });
+};
+
 login();
 
 exports.org = org;
@@ -338,5 +360,5 @@ exports.createCase = createCase;
 exports.createISR = createISR;
 exports.createNDA = createNDA;
 exports.createCart = createCart;
-
+exports.createTask = createTask;
 

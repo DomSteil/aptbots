@@ -206,6 +206,90 @@ controller.hears(['create contact', 'new contact'], 'direct_message,direct_menti
 
 });
 
+controller.hears(['Create Task', 'New Task', 'Log Task'], 'direct_message,direct_mention,mention', (bot, message) => {
+
+    let Who,
+        type,
+        status,
+        callDuration,
+        location,
+        product;
+
+    let askwho = (response, convo) => {
+
+        convo.ask("Who is this assigned to?", (response, convo) => {
+            who = response.text;
+            askType(response, convo);
+            convo.next();
+        });
+
+    };
+
+    let askType = (response, convo) => {
+
+        convo.ask("What's the type?", (response, convo) => {
+            askType = response.text;
+            askStatus(response, convo);
+            convo.next();
+        });
+
+    };
+
+    let askStatus = (response, convo) => {
+
+        convo.ask("What's the status?", (response, convo) => {
+            status = response.text;
+            askCallDuration(response, convo);
+            convo.next();
+        });
+
+    };
+
+    let askCallDuration = (response, convo) => {
+
+        convo.ask("What was the call duration?", (response, convo) => {
+            callDuration = response.text;
+            askLocation(response, convo);
+            convo.next();
+        });
+
+    };
+
+     let askLocation = (response, convo) => {
+
+        convo.ask("What is the location?", (response, convo) => {
+            location = response.text;
+            askProduct(response, convo);
+            convo.next();
+        });
+
+    };
+
+     let askproduct = (response, convo) => {}
+
+        convo.ask("What's the product they are interested in?", (repsonse, convo) => {
+            product = response.text;
+            salesforce.createTask({who: who, type: type, status: status, callDuration: callDuration, location: location, product: product})
+                .then(task => {
+                    bot.reply(message, {
+                        text: "I created the task:",
+                        attachments: formatter.formatTask(task)
+                    });
+                    convo.next();
+                })
+                .catch(error => {
+                    bot.reply(message, error);
+                    convo.next();
+                });
+        });
+
+    };
+
+    bot.reply(message, "OK, I can help you with that!");
+    bot.startConversation(message, askFirstName);
+
+});
+
 controller.hears(['Create quote', 'new quote', 'Quote', 'New proposal', 'Create proposal'], 'direct_message,direct_mention,mention', (bot, message) => {
 
     let name,
