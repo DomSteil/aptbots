@@ -228,7 +228,7 @@ controller.hears(['Create Task', 'New Task', 'Log Task'], 'direct_message,direct
     let askType = (response, convo) => {
 
         convo.ask("What's the type?", (response, convo) => {
-            askType = response.text;
+            type = response.text;
             askStatus(response, convo);
             convo.next();
         });
