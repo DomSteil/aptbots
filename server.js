@@ -34,7 +34,8 @@ controller.hears(['help'], 'direct_message,direct_mention,mention', (bot, messag
     "Create Quote"
     "Create Agreement"
     "Log an ISR"
-    "Create NDA"`
+    "Create NDA"
+    "Create MSA"`
     });
 });
 
