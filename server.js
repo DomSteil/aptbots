@@ -1743,7 +1743,7 @@ controller.hears(['Add Slack Licenses', 'Add Licenses'], 'direct_message,direct_
                 "fields": [
                     {
                         "title": "Product Code",
-                        "value": "HW-BL003",
+                        "value": "slk-2",
                         "short": true
                     },
                     {
@@ -1785,7 +1785,7 @@ controller.hears(['Add Slack Licenses', 'Add Licenses'], 'direct_message,direct_
             "fields": [
                 {
                     "title": "Product Code",
-                    "value": "HW-BL004",
+                    "value": "slk-3",
                     "short": true
                 },
                 {
@@ -1828,7 +1828,7 @@ controller.hears(['Add Slack Licenses', 'Add Licenses'], 'direct_message,direct_
             "fields": [
                 {
                     "title": "Product Code",
-                    "value": "HW-BL002",
+                    "value": "slk-4",
                     "short": true
                 },
                 {
