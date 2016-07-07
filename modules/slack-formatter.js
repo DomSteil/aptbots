@@ -109,8 +109,8 @@ let formatQuote = quote => {
 
     let fields = [];
     fields.push({title: "Quote Name", value: quote.get("Apttus_Proposal__Proposal_Name__c"), short: true});
-    fields.push({title: "Opportunity", value: "Venture - Hardware and Software", short: true});
-    fields.push({title: "Price List", value: "Tier 1 Hardware & Software", short: true});
+    fields.push({title: "Opportunity", value: "Venture -Enterprise Licenses", short: true});
+    fields.push({title: "Price List", value: "Slack", short: true});
     fields.push({title: "Link", value: '<' +'https://login.salesforce.com/apex/Apttus_QPConfig__ProposalConfiguration?id=' + quote.get("id") + '&amp;useAdvancedApproval=true&amp;useDealOptimizer=true&amp;method=csrFlow&amp;flow=tier1angular'+'|Configure Products'+ '>', short: true});
     return [{color: color, fields: fields}];
 
