@@ -1721,3 +1721,275 @@ controller.hears(['Configure Products', 'New Configuration'], 'direct_message,di
     bot.startConversation(message, askProductName);
 
 });
+
+
+
+
+controller.hears(['Add Slack Licenses', 'Add Licenses'], 'direct_message,direct_mention,mention', (bot, message) => {
+
+    let productName,
+        quantity,
+        discount;
+
+    let askProductName = (response, convo) => {
+
+        convo.ask({
+        attachments:[
+            {
+                "title": "Slack Standard",
+                "title_link": "https://na30.salesforce.com/01t36000001hmdk",
+                "color": "#62A70F",
+                "callback_id": '123',
+                "fields": [
+                    {
+                        "title": "Product Code",
+                        "value": "HW-BL003",
+                        "short": true
+                    },
+                    {
+                        "title": "List Price",
+                        "value": "$6.97",
+                        "short": true
+                    },
+                ],
+            "author_name": "",
+            "author_icon": "https://api.slack.com/img/api/homepage_custom_integrations-2x.png",
+            "image_url": "http://www.greenmellenmedia.com/wp-content/uploads/slack-chat.png",
+        },
+
+            {
+                title: '',
+                callback_id: '123',
+                color: "#62A70F",
+                attachment_type: 'default',
+                actions: [
+                    {
+                        "name":"addToCart",
+                        "text": "Add to Cart",
+                        "value": "WS460c Gen8 Graphics Server Blade",
+                        "style": "primary",
+                        "type": "button",
+                    },
+                    {
+                        "name":"configure",
+                        "text": "Configure",
+                        "value": "WS460c Gen8 Graphics Server Blade",
+                        "type": "button",
+                    }
+                ]
+            },
+             {
+            "title": "Slack Plus",
+            "title_link": "https://na30.salesforce.com/01t36000001hmcK",
+            "color": "#62A70F",
+            "fields": [
+                {
+                    "title": "Product Code",
+                    "value": "HW-BL004",
+                    "short": true
+                },
+                {
+                    "title": "List Price",
+                    "value": "$12.50",
+                    "short": true
+                },
+            ],
+            "author_name": "",
+            "author_icon": "https://api.slack.com/img/api/homepage_custom_integrations-2x.png",
+            "image_url": "http://www.greenmellenmedia.com/wp-content/uploads/slack-chat.png",
+        },
+
+
+            {
+                title: '',
+                callback_id: '123',
+                "color": "#62A70F",
+                attachment_type: 'default',
+                actions: [
+                    {
+                        "name":"addToCart",
+                        "text": "Add to Cart",
+                        "value": "BL660c Gen8 Server Blade",
+                        "style": "primary",
+                        "type": "button",
+                    },
+                    {
+                        "name":"configure",
+                        "text": "Configure",
+                        "value": "BL660c Gen8 Server Blade",
+                        "type": "button",
+                    }
+                ]
+            },
+             {
+            "title": "Slack Enterprise",
+            "title_link": "https://na30.salesforce.com/01t36000001hmc9",
+            "color": "#62A70F",
+            "fields": [
+                {
+                    "title": "Product Code",
+                    "value": "HW-BL002",
+                    "short": true
+                },
+                {
+                    "title": "List Price",
+                    "value": "$25.00",
+                    "short": true
+                },
+            ],
+            "author_name": "",
+            "author_icon": "https://api.slack.com/img/api/homepage_custom_integrations-2x.png",
+            "image_url": "http://www.greenmellenmedia.com/wp-content/uploads/slack-chat.png",
+        },
+
+
+            {
+                title: '',
+                callback_id: '123',
+                "color": "#62A70F",
+                attachment_type: 'default',
+                actions: [
+                    {
+                        "name":"addToCart",
+                        "text": "Add to Cart",
+                        "value": "BL460c Gen8 Server Blade",
+                        "style": "primary",
+                        "type": "button",
+                    },
+                    {
+                        "name":"configure",
+                        "text": "Configure",
+                        "value": "BL460c Gen8 Server Blade",
+                        "type": "button",
+                    }
+                ]
+            }
+        ]  
+    },[
+        {
+            pattern: "Slack Standard",
+            callback: function(response, convo) {
+                productName = response.text;
+                convo.say('Ok, I added: ' + response.text);
+                askQuantity(response, convo);
+                convo.next();
+            }
+        },
+        {
+            pattern: "Slack Plus",
+            callback: function(response, convo) {
+                productName = response.text;
+                convo.say('Ok, I added: ' + response.text);
+                askQuantity(response, convo);
+                convo.next();
+            }
+        },
+        {
+            pattern: "Slack Enterprise",
+            callback: function(response, convo) {
+                productName = response.text;
+                convo.say('Ok, I added: ' + response.text);
+                askQuantity(response, convo);
+                convo.next();
+            }
+        },
+        {   
+            default: true,
+            callback: function(response, convo) {
+            }
+        }
+
+    ]);
+};
+
+    let askQuantity = (response, convo) => {
+
+        convo.ask("How many Licenses?", (response, convo) => {
+            quantity = response.text;
+            askDiscount(response, convo);
+            convo.next();
+        });
+    }
+
+    let askDiscount = (response, convo) => {
+
+        convo.ask("What is the discount?", (response, convo) => {
+            discount = response.text;
+            salesforce.createCart({productName: productName, quantity: quantity, discount: discount})
+                .then(cart => {
+                    bot.reply(message, {
+        attachments:[
+            {
+            "title": "Q-00000520",
+            "title_link": "https://na30.salesforce.com/a3V360000009ohT",
+            "color": "#62A70F",
+            "fields": [
+                {
+                    "title": "Product Name",
+                    "value": "Slack Standard",
+                    "short": true
+                },
+                {
+                    "title": "List Price",
+                    "value": "$4,954.00",
+                    "short": true
+                },
+                {
+                    "title": "Discount",
+                    "value": "15%",
+                    "short": true
+                },
+                {
+                    "title": "Extended Price",
+                    "value": "$842,200.00",
+                    "short": true
+                }
+            ],
+            "author_name": "",
+            "author_icon": "https://api.slack.com/img/api/homepage_custom_integrations-2x.png",
+            "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKSIhgmREbJQpZnqBsFVL_3PBgZieXqZLNTpEuwHxj5CTEgZL4"
+        },
+
+
+            {
+                title: 'Quote Actions',
+                callback_id: '123',
+                "color": "#62A70F",
+                attachment_type: 'default',
+                actions: [
+                    {
+                        "name":"Generate",
+                        "text": "Generate",
+                        "value": "Generate",
+                        "type": "button",
+                    },
+                    {
+                        "name":"Present",
+                        "text": "Present",
+                        "value": "Present",
+                        "type": "button",
+                    },
+                    {
+                        "name":"SendForeSignature",
+                        "text": "Send for eSignature",
+                        "value": "Send for eSignature",
+                        "type": "button",
+                    }
+                ]
+            }
+        ]
+    });
+                    convo.next();
+                })
+                .catch(error => {
+                    bot.reply(message, error);
+                    convo.next();
+                });
+        });
+
+    };
+
+    bot.reply(message, "OK, I can help you with that!");
+    bot.startConversation(message, askProductName);
+
+});
