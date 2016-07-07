@@ -1931,7 +1931,7 @@ controller.hears(['Add Slack Licenses', 'Add Licenses'], 'direct_message,direct_
                 },
                 {
                     "title": "List Price",
-                    "value": "$4,954.00",
+                    "value": "$6.97",
                     "short": true
                 },
                 {
@@ -1941,7 +1941,7 @@ controller.hears(['Add Slack Licenses', 'Add Licenses'], 'direct_message,direct_
                 },
                 {
                     "title": "Extended Price",
-                    "value": "$842,200.00",
+                    "value": "$13,940",
                     "short": true
                 }
             ],
