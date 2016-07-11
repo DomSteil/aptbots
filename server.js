@@ -389,19 +389,19 @@ controller.hears(['create agreement', 'new agreement', 'create contract', 'new c
                 attachment_type: 'default',
                 actions: [
                     {
-                        "name":"NDA",
+                        "name":"createNDA",
                         "text": "NDA",
                         "value": "nda",
                         "type": "button",
                     },
                     {
-                        "name":"MSA",
+                        "name":"createMSA",
                         "text": "MSA",
                         "value": "msa",
                         "type": "button",
                     },
                      {
-                        "name":"SOW",
+                        "name":"createSOW",
                         "text": "SOW",
                         "value": "sow",
                         "type": "button",
